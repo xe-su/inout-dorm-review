@@ -107,6 +107,9 @@ svg{display:block;max-width:100%;height:auto}
 .tl h3{font-size:17px;color:var(--ink);margin-bottom:5px}
 .tl .q{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
 .tl p{font-size:14px;color:var(--muted)}
+.alt .tl h3{color:#fff}
+.alt .tl p{color:#aebccd}
+.gfx-white .tl h3{color:var(--ink)}.gfx-white .tl p{color:var(--muted)}
 
 .note{font-size:12.5px;color:var(--muted);margin-top:22px;font-style:italic}
 footer{background:var(--ink);color:#9fb2c6;text-align:center;padding:40px 20px;font-size:13px}
@@ -544,25 +547,24 @@ footer b{color:#fff}
 <section class="alt">
   <div class="wrap">
     <span class="kicker">The Road Ahead</span>
-    <h2 class="sec-title">Next 12 months</h2>
-    <p class="sec-sub">Build on the FY25-26 base — push the annual run-rate toward ₹88L (+30%) by lifting occupancy, direct bookings and per-guest value.</p>
+    <h2 class="sec-title">The growth plan</h2>
+    <p class="sec-sub">Already running at ~₹6.5L / month. Two clear levers take the dorm to ₹85L a year — and ₹8L / month is realistic the moment bedbugs are solved.</p>
     <div class="grid g2" style="align-items:start">
       <div class="card chartbox">
         <h3 style="font-size:15px;color:#8ea3b8;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px">Income Target</h3>
         <svg id="targetChart" viewBox="0 0 460 260" aria-label="FY27 target"></svg>
-        <div class="legend" style="color:#9fb2c6"><span><i style="background:#1FB6A6"></i>FY25-26 actual ₹67.78L</span><span><i style="background:#F2A93B"></i>FY26-27 target ₹88L</span></div>
+        <div class="legend" style="color:#9fb2c6"><span><i style="background:#1FB6A6"></i>FY25-26 actual ₹68.26L</span><span><i style="background:#F2A93B"></i>FY26-27 target ₹85L</span></div>
+        <div style="margin-top:18px;background:rgba(31,182,166,.1);border:1px solid rgba(31,182,166,.25);border-radius:12px;padding:16px"><div style="font-size:26px;font-weight:850;color:var(--teal)">₹8L / month</div><div style="font-size:13px;color:#9fb2c6;margin-top:2px">realistic ceiling once bedbugs are fixed</div></div>
       </div>
       <div class="card">
         <div class="tl">
-          <div class="item"><div class="q">Priority #1 — Solve bedbugs</div><h3>A permanent fix</h3><p>A proper property-level intervention (professional fumigation / structural treatment) — the single biggest unlock for occupancy, reviews &amp; growth.</p></div>
-          <div class="item"><div class="q">Q1 — Lift occupancy</div><h3>69% → 80%+</h3><p>Push weekday occupancy with corporate &amp; contractor tie-ups and the source cities already proven (Banaskantha, Jodhpur).</p></div>
-          <div class="item"><div class="q">Q2 — Direct-booking share</div><h3>Cut OTA commission leakage</h3><p>Drive more traffic to inoutdorm.com and WhatsApp, growing zero-commission direct revenue.</p></div>
-          <div class="item"><div class="q">Q3 — Per-guest value</div><h3>Add-ons &amp; longer stays</h3><p>Introduce meal / locker / laundry add-ons and weekly-stay packages to grow the 21% repeat base and avg ticket.</p></div>
-          <div class="item"><div class="q">Q4 — Scale the model</div><h3>Second-property ready</h3><p>Standardise the playbook — PMS, staffing SOPs, marketing — so it can be cloned to a second dorm.</p></div>
+          <div class="item"><div class="q">Lever 1 · The unlock</div><h3>Solve bedbugs, permanently</h3><p>A proper property-level intervention (professional fumigation / structural treatment). This alone lifts occupancy, reviews and ratings — and opens the path to ₹8L / month.</p></div>
+          <div class="item"><div class="q">Lever 2 · Demand engine</div><h3>Group bookings from our own database</h3><p>We already hold contact numbers for many institutes, plus the full phone-number data of <b>every guest who has ever stayed</b>. A messaging campaign to all of them — pushing group &amp; bulk bookings — turns that dormant data into filled beds.</p></div>
+          <div class="item"><div class="q">Supporting</div><h3>More direct &amp; bulk bookings</h3><p>Group-booking focus + direct bookings via inoutdorm.com and WhatsApp keep commissions low and occupancy high.</p></div>
         </div>
       </div>
     </div>
-    <p class="note">Targets are directional, built on the FY25-26 actuals and current 69% occupancy run-rate.</p>
+    <p class="note">Target built on the current ~₹6.5L / month run-rate; ₹8L / month is the realistic ceiling once the bedbug issue is resolved.</p>
   </div>
 </section>
 
@@ -657,14 +659,14 @@ footer b{color:#fff}
 (function(){
   const svg=document.getElementById('targetChart');
   const base=210, max=100;
-  const h1=(67.78/max)*170,h2=(88/max)*170;
+  const h1=(68.26/max)*170,h2=(85/max)*170;
   let s='';
   s+='<line x1="40" y1="'+base+'" x2="430" y2="'+base+'" stroke="rgba(255,255,255,.1)" stroke-width="2"/>';
   s+='<rect x="95" y="'+(base-h1)+'" width="100" height="'+h1+'" rx="6" fill="#1FB6A6"/>';
-  s+='<text x="145" y="'+(base-h1-10)+'" text-anchor="middle" font-size="17" font-weight="850" fill="#1FB6A6">₹67.78L</text>';
+  s+='<text x="145" y="'+(base-h1-10)+'" text-anchor="middle" font-size="17" font-weight="850" fill="#1FB6A6">₹68.26L</text>';
   s+='<text x="145" y="'+(base+22)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#8ea3b8">FY25-26</text>';
   s+='<rect x="265" y="'+(base-h2)+'" width="100" height="'+h2+'" rx="6" fill="#F2A93B"/>';
-  s+='<text x="315" y="'+(base-h2-10)+'" text-anchor="middle" font-size="17" font-weight="850" fill="#F2A93B">₹88L</text>';
+  s+='<text x="315" y="'+(base-h2-10)+'" text-anchor="middle" font-size="17" font-weight="850" fill="#F2A93B">₹85L</text>';
   s+='<text x="315" y="'+(base+22)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#8ea3b8">FY26-27</text>';
   svg.innerHTML=s;
 })();
