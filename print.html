@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In &amp; Out Dorm — Operations Review FY25-26 (A4 Print)</title>
+<style>
+:root{
+  --ink:#0E1B2A; --ink2:#16263b; --amber:#F2A93B; --teal:#1FB6A6;
+  --paper:#eef1f5; --line:#e2e8f0; --muted:#5d7186; --text:#1c2c3d; --good:#178a4c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--paper);color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.toolbar{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.toolbar b{color:var(--amber)}
+.toolbar button{background:var(--amber);color:var(--ink);border:none;padding:9px 18px;border-radius:8px;font-weight:800;font-size:14px;cursor:pointer}
+.stack{padding:24px 0;display:flex;flex-direction:column;align-items:center;gap:22px}
+
+/* A4 sheet */
+.sheet{
+  width:210mm; min-height:297mm; background:#fff; position:relative;
+  box-shadow:0 6px 26px rgba(14,27,42,.16); overflow:hidden;
+  padding:16mm 15mm;
+}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+.kicker{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:9px;display:block}
+.title{font-size:30px;font-weight:850;color:var(--ink);margin-bottom:7px}
+.sub{font-size:13.5px;color:var(--muted);max-width:150mm;margin-bottom:18px}
+.foot{position:absolute;bottom:9mm;left:15mm;right:15mm;display:flex;justify-content:space-between;font-size:10px;color:#9aa8b8;border-top:1px solid var(--line);padding-top:7px}
+
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .lab{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.kpi b{display:block;font-size:26px;font-weight:850;color:var(--ink);letter-spacing:-.02em}
+.kpi .s{font-size:11.5px;color:var(--muted);margin-top:4px}
+.kpi .up{color:var(--good);font-weight:700}
+svg{display:block;max-width:100%;height:auto}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+
+/* cover */
+.cover{background:linear-gradient(135deg,#16263b,#0E1B2A 70%);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:24mm 18mm}
+.cover .brand{display:flex;align-items:center;gap:12px;margin-bottom:40px}
+.cover .logo{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,var(--amber),#e0922a);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--ink);font-size:14px}
+.cover h1{font-size:46px;font-weight:880;margin-bottom:14px}
+.cover h1 em{font-style:normal;color:var(--amber)}
+.cover p{font-size:15px;color:#c2d2e2;max-width:140mm;margin-bottom:30px}
+.cover .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:150mm}
+.cover .stats div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:14px}
+.cover .stats b{display:block;font-size:24px;font-weight:850}
+.cover .stats span{font-size:10.5px;color:#9fb2c6;text-transform:uppercase;letter-spacing:.05em}
+.cover .stats .a b{color:var(--amber)}.cover .stats .t b{color:var(--teal)}
+.cover .tag{align-self:flex-start;font-size:11px;color:#9fb2c6;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:6px 13px;border-radius:30px;margin-bottom:26px}
+
+table.cmp{width:100%;border-collapse:collapse;margin-top:10px}
+table.cmp td{padding:10px 6px;border-bottom:1px solid var(--line);font-size:13px}
+table.cmp tr:last-child td{border-bottom:none}
+table.cmp .n{text-align:right;font-weight:800;color:var(--ink)}
+table.cmp .h{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800}
+
+.bar{margin-bottom:11px}
+.bar .t{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px}
+.bar .t b{color:var(--ink);font-weight:700}.bar .t span{color:var(--muted)}
+.bar .track{height:9px;background:#eef2f6;border-radius:20px;overflow:hidden}
+.bar .fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--amber),#e0922a)}
+.cities{list-style:none}
+.cities li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+.cities li:last-child{border-bottom:none}.cities .rank{color:var(--amber);font-weight:800;margin-right:8px}
+
+.feat{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px}
+.feat .ic{flex:0 0 38px;width:38px;height:38px;border-radius:10px;background:rgba(242,169,59,.13);color:#c47d18;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800}
+.feat h3{font-size:14.5px;color:var(--ink);margin-bottom:3px}
+.feat p{font-size:12px;color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:6px}
+.shot .bar3{display:flex;gap:5px;padding:7px 9px;background:#f3f6f9}
+.shot .bar3 span{width:9px;height:9px;border-radius:50%}
+.shot img{width:100%;display:block}
+.cap b{font-size:13px;color:var(--ink)}.cap p{font-size:11.5px;color:var(--muted);margin-top:2px;margin-bottom:14px}
+.tl{position:relative;padding-left:22px}
+.tl:before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:var(--line)}
+.tl .item{position:relative;padding-bottom:14px}
+.tl .item:before{content:"";position:absolute;left:-19px;top:3px;width:11px;height:11px;border-radius:50%;background:var(--amber)}
+.tl .q{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#0d9488;margin-bottom:2px}
+.tl h3{font-size:13.5px;color:var(--ink);margin-bottom:2px}.tl p{font-size:11.5px;color:var(--muted)}
+
+@media print{
+  .toolbar{display:none}
+  body{background:#fff}
+  .stack{padding:0;gap:0}
+  .sheet{box-shadow:none;width:210mm;min-height:297mm;page-break-after:always;margin:0}
+  .sheet:last-child{page-break-after:auto}
+}
+@page{size:A4;margin:0}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span>📄 <b>A4 Print version</b> — print or save as PDF for the meeting</span>
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+<div class="stack">
+
+  <!-- PAGE 1 — COVER -->
+  <section class="sheet cover">
+    <div class="brand"><div class="logo">I&amp;O</div><div><b style="font-size:16px">In &amp; Out Dormitory</b><div style="font-size:11.5px;color:#9fb2c6">Ahmedabad · Operated by Shubham Panchal</div></div></div>
+    <div class="tag">● Live operations · data as of 10 Jun 2026</div>
+    <h1>Operations Review<br><em>FY 2025-26</em></h1>
+    <p>From a quiet handover to a 156-bed, ₹68 L/year running machine — how the dorm grew, what was rebuilt, and where it's headed next.</p>
+    <div class="stats">
+      <div class="a"><b>₹68.26L</b><span>FY25-26 Sales</span></div>
+      <div class="t"><b>2.9×</b><span>vs Pre-Handover</span></div>
+      <div><b>69%</b><span>Occupancy</span></div>
+      <div><b>156</b><span>Beds</span></div>
+    </div>
+    <div class="foot" style="border-color:rgba(255,255,255,.12);color:#9fb2c6"><span>In &amp; Out Dormitory · Ahmedabad</span><span>Prepared for Sancube</span></div>
+  </section>
+
+  <!-- PAGE 2 — GROWTH -->
+  <section class="sheet">
+    <span class="kicker">1 · Growth — Pehle vs Abhi</span>
+    <h2 class="title">Year-on-year, only up</h2>
+    <p class="sub">Before the handover, monthly sales sat under ₹2 L. New management more than doubled it in the first year — and it has climbed every financial year since.</p>
+    <div class="card"><svg id="growthChart" viewBox="0 0 600 300" aria-label="growth"></svg>
+      <p style="font-size:11px;color:var(--muted);margin-top:8px">FY22-23 = pre-handover baseline (own sales analysis); FY23-24 onward = portal-verified collections.</p>
+    </div>
+    <table class="cmp">
+      <tr><td class="h">Financial Year</td><td class="h" style="text-align:right">Sales · Avg / month</td></tr>
+      <tr><td>FY22-23 · pre-handover</td><td class="n">~₹23.6L · ₹1.97L</td></tr>
+      <tr><td>FY23-24 · handover year</td><td class="n">₹49.71L · ₹4.14L</td></tr>
+      <tr><td>FY24-25</td><td class="n">₹63.87L · ₹5.32L</td></tr>
+      <tr><td>FY25-26</td><td class="n">₹68.26L · ₹5.69L</td></tr>
+    </table>
+    <div class="foot"><span>In &amp; Out Dorm · FY25-26 Review</span><span>Page 2</span></div>
+  </section>
+
+  <!-- PAGE 3 — FINANCIALS -->
+  <section class="sheet">
+    <span class="kicker">2 · Financial Performance</span>
+    <h2 class="title">FY 2025-26 in numbers</h2>
+    <p class="sub">A full year of operations — every single month profitable, with a healthy net margin after all expenses.</p>
+    <div class="grid g4" style="margin-bottom:12px">
+      <div class="card kpi"><div class="lab">Total Income</div><b>₹67.78L</b><div class="s">Apr'25–Mar'26</div></div>
+      <div class="card kpi"><div class="lab">Expenses</div><b>₹28.70L</b><div class="s">staff · utilities</div></div>
+      <div class="card kpi"><div class="lab">Net Revenue</div><b>₹39.08L</b><div class="s"><span class="up">57.7% margin</span></div></div>
+      <div class="card kpi"><div class="lab">Avg / Month</div><b>₹5.65L</b><div class="s">Peak Dec ₹6.83L</div></div>
+    </div>
+    <div class="grid g2">
+      <div class="card"><div class="lab" style="font-size:11px;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Monthly Income — all 12 months profitable</div><svg id="incomeChart" viewBox="0 0 560 280"></svg></div>
+      <div class="card"><div class="lab" style="font-size:11px;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Quarterly Performance</div><svg id="quarterChart" viewBox="0 0 520 280"></svg></div>
+    </div>
+    <div class="foot"><span>In &amp; Out Dorm · FY25-26 Review</span><span>Page 3</span></div>
+  </section>
+
+  <!-- PAGE 4 — OPS + GUESTS -->
+  <section class="sheet">
+    <span class="kicker">3 · Live Operations &amp; Guests</span>
+    <h2 class="title">Running, right now</h2>
+    <p class="sub">Real-time numbers straight from the management system, plus who actually stays at the dorm.</p>
+    <div class="grid g4" style="margin-bottom:12px">
+      <div class="card kpi"><div class="lab">Occupancy</div><b>69%</b><div class="s">108 / 156 beds</div></div>
+      <div class="card kpi"><div class="lab">Guests In-House</div><b>107</b><div class="s">4 dorm blocks</div></div>
+      <div class="card kpi"><div class="lab">Avg Stay</div><b>1.6 d</b><div class="s">daily-stay model</div></div>
+      <div class="card kpi"><div class="lab">Repeat Guests</div><b>21%</b><div class="s">2+ bookings</div></div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="lab" style="font-size:11px;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Age Distribution</div>
+        <div class="bar"><div class="t"><b>26–35 yrs</b><span>47%</span></div><div class="track"><div class="fill" style="width:47%"></div></div></div>
+        <div class="bar"><div class="t"><b>18–25 yrs</b><span>24%</span></div><div class="track"><div class="fill" style="width:24%"></div></div></div>
+        <div class="bar"><div class="t"><b>36–45 yrs</b><span>19%</span></div><div class="track"><div class="fill" style="width:19%"></div></div></div>
+        <div class="bar"><div class="t"><b>46–55 yrs</b><span>7%</span></div><div class="track"><div class="fill" style="width:7%"></div></div></div>
+        <div class="bar"><div class="t"><b>Other</b><span>3%</span></div><div class="track"><div class="fill" style="width:3%"></div></div></div>
+      </div>
+      <div class="card">
+        <div class="lab" style="font-size:11px;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Top Source Cities</div>
+        <ul class="cities">
+          <li><span><span class="rank">1</span>Banaskantha</span><b style="color:var(--teal)">Highest</b></li>
+          <li><span><span class="rank">2</span>Jodhpur</span></li>
+          <li><span><span class="rank">3</span>Surat</span></li>
+          <li><span><span class="rank">4</span>Kachchh</span></li>
+          <li><span><span class="rank">5</span>Ahmedabad</span></li>
+        </ul>
+        <div class="grid g2" style="margin-top:10px">
+          <div class="card kpi" style="padding:11px"><div class="lab">Gender</div><b style="font-size:20px">99%</b><div class="s">male base</div></div>
+          <div class="card kpi" style="padding:11px"><div class="lab">Tariff</div><b style="font-size:20px">₹350</b><div class="s">/ bed · GST incl</div></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:11.5px;color:var(--muted);margin-top:12px;font-style:italic">Young male, Rajasthan + Gujarat working/transit crowd on short daily stays — exactly who the gents-heavy 112-bed layout and ₹350 daily tariff are built for.</p>
+    <div class="foot"><span>In &amp; Out Dorm · FY25-26 Review</span><span>Page 4</span></div>
+  </section>
+
+  <!-- PAGE 5 — WHAT'S BEEN BUILT -->
+  <section class="sheet">
+    <span class="kicker">4 · What's Been Built</span>
+    <h2 class="title">The operational overhaul</h2>
+    <p class="sub">Seven pillars rebuilt from the ground up since taking over operations.</p>
+    <div class="feat"><div class="ic">A</div><div><h3>Software &amp; automation</h3><p>Entire dorm on a cloud PMS — live occupancy, automated check-in/out, payments, dues &amp; analytics on one dashboard.</p></div></div>
+    <div class="feat"><div class="ic">B</div><div><h3>Housekeeping revamp</h3><p>Team rebuilt twice for quality &amp; reliability, plus floating staff and daily SOPs so 156 beds turn over cleanly.</p></div></div>
+    <div class="feat"><div class="ic">C</div><div><h3>Marketing &amp; outreach</h3><p>Visiting cards, pamphlets on government roadways buses, 10,000+ flyers locally, and Google Ads targeted at people travelling to Ahmedabad. WhatsApp marketing rolling out next.</p></div></div>
+    <div class="feat"><div class="ic">D</div><div><h3>Online &amp; OTA listings</h3><p>Listed across major travel platforms (incl. MakeMyTrip) for online discovery beyond walk-ins.</p></div></div>
+    <div class="feat"><div class="ic">E</div><div><h3>Own website — inoutdorm.com</h3><p>Direct-booking website with navigation guidance — commission-free bookings flow straight in.</p></div></div>
+    <div class="feat"><div class="ic">F</div><div><h3>Group &amp; event bookings</h3><p>Reached out to multiple event managers to open a bulk group-booking channel — pipeline being built.</p></div></div>
+    <div class="feat"><div class="ic">G</div><div><h3>Local restaurant network</h3><p>Two-way cross-referral with 4–5 nearby restaurants: they forward stay-seekers to us; we share their menus with guests asking about food.</p></div></div>
+    <div class="foot"><span>In &amp; Out Dorm · FY25-26 Review</span><span>Page 5</span></div>
+  </section>
+
+  <!-- PAGE 6 — SCREENSHOTS -->
+  <section class="sheet">
+    <span class="kicker">5 · Built &amp; Live</span>
+    <h2 class="title">See it in action</h2>
+    <p class="sub">Real software, a real booking website — the actual system running the dorm every day.</p>
+    <div class="shot"><div class="bar3"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></div><img src="assets/shot-portal.png" alt="PMS"></div>
+    <div class="cap"><b>Live management software (PMS)</b><p>Occupancy, bookings, payments, demographics &amp; analytics — all real-time on one dashboard.</p></div>
+    <div class="shot"><div class="bar3"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></div><img src="assets/shot-booking.png" alt="Booking"></div>
+    <div class="cap"><b>inoutdorm.com — online booking</b><p>Own website with instant, commission-free direct booking &amp; secure payment.</p></div>
+    <div class="foot"><span>In &amp; Out Dorm · FY25-26 Review</span><span>Page 6</span></div>
+  </section>
+
+  <!-- PAGE 7 — ROAD AHEAD -->
+  <section class="sheet">
+    <span class="kicker">6 · The Road Ahead</span>
+    <h2 class="title">Next 12 months</h2>
+    <p class="sub">Build on the FY25-26 base — push the annual run-rate toward ₹88 L (+30%) by lifting occupancy, direct bookings and per-guest value.</p>
+    <div class="grid g2" style="align-items:start">
+      <div class="card"><div class="lab" style="font-size:11px;font-weight:800;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Income Target</div><svg id="targetChart" viewBox="0 0 460 260"></svg>
+        <div class="legend"><span><i style="background:#1FB6A6"></i>FY25-26 ₹68.26L</span><span><i style="background:#F2A93B"></i>FY26-27 target ₹88L</span></div>
+      </div>
+      <div class="card"><div class="tl">
+        <div class="item"><div class="q">Q1 · Lift occupancy</div><h3>69% → 80%+</h3><p>Weekday occupancy via corporate &amp; contractor tie-ups and proven source cities.</p></div>
+        <div class="item"><div class="q">Q2 · Direct bookings</div><h3>Cut OTA commission</h3><p>More traffic to inoutdorm.com &amp; WhatsApp — grow zero-commission revenue.</p></div>
+        <div class="item"><div class="q">Q3 · Per-guest value</div><h3>Add-ons &amp; longer stays</h3><p>Meal / locker / laundry add-ons and weekly packages.</p></div>
+        <div class="item"><div class="q">Q4 · Scale</div><h3>Second-property ready</h3><p>Standardise the playbook so it can be cloned to a second dorm.</p></div>
+      </div></div>
+    </div>
+    <div class="foot"><span>In &amp; Out Dormitory · Ahmedabad · Operated by Shubham Panchal · inoutdorm.com</span><span>Page 7</span></div>
+  </section>
+
+</div>
+
+<script>
+function bars(svgId,data,opts){
+  var svg=document.getElementById(svgId); if(!svg) return;
+  var W=opts.W,H=opts.H,max=opts.max,pad=opts.pad;
+  var plotH=H-pad.t-pad.b, plotW=W-pad.l-pad.r, gap=plotW/data.length, bw=gap*(opts.bw||0.55);
+  var mx=Math.max.apply(null,data.map(function(d){return d.v}));
+  var s='';
+  if(opts.gridY){opts.gridY.forEach(function(v){var y=pad.t+plotH-(v/max)*plotH;s+='<line x1="'+pad.l+'" y1="'+y+'" x2="'+(W-pad.r)+'" y2="'+y+'" stroke="#eef2f6" stroke-width="1"/><text x="'+(pad.l-5)+'" y="'+(y+4)+'" text-anchor="end" font-size="10" fill="#9aa8b8">'+(v/100000)+'L</text>'});}
+  else {s+='<line x1="'+pad.l+'" y1="'+(pad.t+plotH)+'" x2="'+(W-pad.r)+'" y2="'+(pad.t+plotH)+'" stroke="#e2e8f0" stroke-width="2"/>';}
+  data.forEach(function(d,i){
+    var h=(d.v/max)*plotH,x=pad.l+gap*i+(gap-bw)/2,y=pad.t+plotH-h;
+    var peak=opts.peakTeal&&d.v===mx, fill=d.grey?'#9fb2c6':(peak?'#1FB6A6':'#F2A93B');
+    s+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+h+'" rx="5" fill="'+fill+'"/>';
+    s+='<text x="'+(x+bw/2)+'" y="'+(y-7)+'" text-anchor="middle" font-size="'+(opts.vfs||13)+'" font-weight="850" fill="'+(d.grey?'#5d7186':'#0E1B2A')+'">'+(opts.prefix||'')+d.label+'</text>';
+    s+='<text x="'+(x+bw/2)+'" y="'+(pad.t+plotH+18)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#5d7186">'+d.x+'</text>';
+    if(d.x2) s+='<text x="'+(x+bw/2)+'" y="'+(pad.t+plotH+32)+'" text-anchor="middle" font-size="9.5" fill="#9aa8b8">'+d.x2+'</text>';
+  });
+  svg.innerHTML=s;
+}
+// growth
+bars('growthChart',[
+  {v:23.6,label:'₹23.6L',x:'FY22-23',grey:true},
+  {v:49.71,label:'₹49.71L',x:'FY23-24'},
+  {v:63.87,label:'₹63.87L',x:'FY24-25'},
+  {v:68.26,label:'₹68.26L',x:'FY25-26',v_last:true}
+],{W:600,H:300,max:80,pad:{l:16,r:16,t:34,b:30},bw:0.5,peakTeal:true});
+// monthly income
+(function(){
+  var m=["Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar"];
+  var inc=[551970,529764,403458,555350,588808,681827,542039,628640,683037,506265,579365,527948];
+  var data=inc.map(function(v,i){return {v:v,label:'',x:m[i]}});
+  // custom: no value labels, peak teal
+  var svg=document.getElementById('incomeChart');
+  var W=560,H=280,max=700000,pad={l:38,r:12,t:18,b:28},plotH=H-pad.t-pad.b,plotW=W-pad.l-pad.r,gap=plotW/12,bw=gap*0.62,mx=Math.max.apply(null,inc);
+  var s='';[0,175000,350000,525000,700000].forEach(function(v){var y=pad.t+plotH-(v/max)*plotH;s+='<line x1="'+pad.l+'" y1="'+y+'" x2="'+(W-pad.r)+'" y2="'+y+'" stroke="#eef2f6" stroke-width="1"/><text x="'+(pad.l-5)+'" y="'+(y+4)+'" text-anchor="end" font-size="9.5" fill="#9aa8b8">'+(v/100000)+'L</text>'});
+  inc.forEach(function(v,i){var h=(v/max)*plotH,x=pad.l+gap*i+(gap-bw)/2,y=pad.t+plotH-h,peak=v===mx;s+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+h+'" rx="3" fill="'+(peak?'#1FB6A6':'#F2A93B')+'"/><text x="'+(x+bw/2)+'" y="'+(pad.t+plotH+16)+'" text-anchor="middle" font-size="9.5" fill="#5d7186">'+m[i]+'</text>';if(peak)s+='<text x="'+(x+bw/2)+'" y="'+(y-6)+'" text-anchor="middle" font-size="10" font-weight="800" fill="#1FB6A6">₹6.83L</text>';});
+  svg.innerHTML=s;
+})();
+// quarterly
+bars('quarterChart',[
+  {v:14.85,label:'₹14.85L',x:'Q1',x2:'Apr–Jun'},
+  {v:18.26,label:'₹18.26L',x:'Q2',x2:'Jul–Sep'},
+  {v:18.54,label:'₹18.54L',x:'Q3',x2:'Oct–Dec'},
+  {v:16.14,label:'₹16.14L',x:'Q4',x2:'Jan–Mar'}
+],{W:520,H:280,max:20,pad:{l:16,r:16,t:28,b:40},bw:0.5,peakTeal:true});
+// target
+(function(){
+  var svg=document.getElementById('targetChart'),base=210,max=100,h1=(68.26/max)*170,h2=(88/max)*170,s='';
+  s+='<line x1="40" y1="'+base+'" x2="430" y2="'+base+'" stroke="#e2e8f0" stroke-width="2"/>';
+  s+='<rect x="95" y="'+(base-h1)+'" width="100" height="'+h1+'" rx="6" fill="#1FB6A6"/><text x="145" y="'+(base-h1-9)+'" text-anchor="middle" font-size="16" font-weight="850" fill="#0d9488">₹68.26L</text><text x="145" y="'+(base+20)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#5d7186">FY25-26</text>';
+  s+='<rect x="265" y="'+(base-h2)+'" width="100" height="'+h2+'" rx="6" fill="#F2A93B"/><text x="315" y="'+(base-h2-9)+'" text-anchor="middle" font-size="16" font-weight="850" fill="#c47d18">₹88L</text><text x="315" y="'+(base+20)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#5d7186">FY26-27</text>';
+  s+='<text x="315" y="'+(base-h2-28)+'" text-anchor="middle" font-size="12" font-weight="800" fill="#0d9488">+30%</text>';
+  svg.innerHTML=s;
+})();
+</script>
+</body>
+</html>
