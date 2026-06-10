@@ -121,6 +121,56 @@ footer b{color:#fff}
 .shot img{width:100%;display:block}
 .shot .cap{font-size:12.5px;color:var(--muted);font-weight:600;padding:11px 13px 14px}
 
+/* ---- FULL STORY SECTIONS ---- */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.story.rev .story-text{order:2}
+.story-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--amber);color:var(--ink);font-weight:900;font-size:19px;margin-bottom:18px}
+.story-text h2{font-size:clamp(24px,3.4vw,34px);font-weight:850;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em}
+.alt .story-text h2{color:#fff}
+.story-text .ey{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;display:block}
+.big-p{font-size:16px;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.alt .big-p{color:#aebccd}
+.ticks{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ticks li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--text);font-weight:600}
+.alt .ticks li{color:#cfdae6}
+.ticks li:before{content:"✓";color:var(--teal);font-weight:900;flex:0 0 auto;font-size:15px}
+
+/* big browser frame */
+.frame{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 55px rgba(14,27,42,.18)}
+.alt .frame{border-color:rgba(255,255,255,.1)}
+.frame .fbar{display:flex;gap:6px;padding:11px 13px;background:#f3f6f9;border-bottom:1px solid var(--line)}
+.frame .fbar span{width:11px;height:11px;border-radius:50%}
+.frame .fbar span:nth-child(1){background:#ff5f57}.frame .fbar span:nth-child(2){background:#febc2e}.frame .fbar span:nth-child(3){background:#28c840}
+.frame img{width:100%;display:block}
+.framestack{display:flex;flex-direction:column;gap:18px}
+.frcap{font-size:12.5px;color:var(--muted);font-weight:700;padding:10px 14px;border-top:1px solid var(--line);background:#fff}
+
+/* graphic panels (self-contained, work on any bg) */
+.gfx{border-radius:20px;padding:34px;position:relative;overflow:hidden;box-shadow:0 20px 55px rgba(14,27,42,.16)}
+.gfx-teal{background:linear-gradient(140deg,#1FB6A6,#0d8276);color:#fff}
+.gfx-navy{background:linear-gradient(140deg,#16263b,#0E1B2A);color:#fff}
+.gfx-amber{background:linear-gradient(140deg,#F2A93B,#e0892a);color:#fff}
+.gfx-white{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.gfx .huge{font-size:72px;font-weight:900;line-height:1;letter-spacing:-.03em}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+.tile{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:13px;padding:15px}
+.gfx-white .tile{background:var(--paper);border-color:var(--line)}
+.tile .ti{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:9px;background:rgba(255,255,255,.16)}
+.gfx-white .tile .ti{background:rgba(242,169,59,.14)}
+.tile b{display:block;font-size:14px;font-weight:800;margin-bottom:2px}
+.tile small{font-size:11.5px;opacity:.8;line-height:1.3;display:block}
+.statpills{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.statpills span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:7px 14px;font-size:13px;font-weight:700}
+.gfx-white .statpills span{background:var(--paper);border-color:var(--line);color:var(--text)}
+.badge-row{display:flex;flex-wrap:wrap;gap:11px;margin-top:6px}
+.obadge{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:13px 17px;font-weight:800;font-size:15px;display:flex;align-items:center;gap:9px}
+.obadge.lead{background:#fff;color:var(--ink)}
+.flow{display:flex;align-items:stretch;gap:0;margin-top:8px;flex-wrap:wrap}
+.flow .step{flex:1;min-width:96px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:14px 12px;text-align:center}
+.flow .step b{display:block;font-size:13.5px;font-weight:800}
+.flow .step small{font-size:11px;opacity:.85}
+.flow .arrow{display:flex;align-items:center;color:rgba(255,255,255,.6);font-size:20px;padding:0 6px}
+
 @media(max-width:820px){
   .g4{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:1fr}
@@ -128,6 +178,9 @@ footer b{color:#fff}
   .handover{grid-template-columns:1fr}
   .heroStats{grid-template-columns:repeat(2,1fr)}
   section{padding:48px 0}
+  .story{grid-template-columns:1fr;gap:28px}
+  .story.rev .story-text{order:0}
+  .flow{flex-direction:row}
 }
 </style>
 </head>
@@ -269,71 +322,185 @@ footer b{color:#fff}
   </div>
 </section>
 
-<!-- WHAT WE'VE DONE -->
-<section>
+<!-- SECTION INTRO -->
+<section style="padding-bottom:0">
   <div class="wrap">
-    <span class="kicker">5 · What's Been Built</span>
+    <span class="kicker">What's Been Built</span>
     <h2 class="sec-title">The operational overhaul</h2>
-    <p class="sec-sub">Six pillars rebuilt from the ground up since taking over operations.</p>
-    <div class="grid g2">
-      <div class="card feat"><div class="ic">A</div><div>
-        <h3>Software &amp; automation</h3>
-        <p>Moved the entire dorm onto a cloud PMS — live occupancy, automated check-in/out, payments, dues tracking and analytics, all on one dashboard.</p>
-        <div class="chips"><span class="chip">Live PMS</span><span class="chip">Auto payments</span><span class="chip">Real-time analytics</span></div>
-      </div></div>
-      <div class="card feat"><div class="ic">B</div><div>
-        <h3>Housekeeping revamp</h3>
-        <p>Rebuilt the housekeeping team twice to fix quality and reliability, added floating staff and SOPs so 156 beds turn over cleanly every day.</p>
-        <div class="chips"><span class="chip">Team changed 2×</span><span class="chip">Daily SOPs</span><span class="chip">Floating staff</span></div>
-      </div></div>
-      <div class="card feat"><div class="ic">C</div><div>
-        <h3>Marketing &amp; outreach</h3>
-        <p>Visiting cards, promotional pamphlets pasted across government roadways buses, and 10,000+ flyers distributed around the area — plus smart Google Ads targeted specifically at people travelling to Ahmedabad (by travel intent). WhatsApp marketing is rolling out next.</p>
-        <div class="chips"><span class="chip">Visiting cards</span><span class="chip">Bus pamphlets</span><span class="chip">10,000+ flyers</span><span class="chip">Travel-targeted Google Ads</span><span class="chip">WhatsApp (next)</span></div>
-      </div></div>
-      <div class="card feat"><div class="ic">D</div><div>
-        <h3>Online &amp; OTA listings</h3>
-        <p>Listed In &amp; Out across major travel platforms so guests can discover and book online — broadening reach well beyond walk-ins.</p>
-        <div class="chips"><span class="chip">OTA listings</span><span class="chip">Online discovery</span></div>
-      </div></div>
-      <div class="card feat"><div class="ic">E</div><div>
-        <h3>Own website — inoutdorm.com</h3>
-        <p>Built a direct-booking website with location &amp; navigation guidance for guests — commission-free bookings now flow straight in.</p>
-        <div class="chips"><span class="chip">Direct bookings</span><span class="chip">Navigation</span><span class="chip">Zero commission</span></div>
-      </div></div>
-      <div class="card feat"><div class="ic">F</div><div>
-        <h3>Group &amp; event bookings</h3>
-        <p>Reached out to multiple event managers and organisers to open a bulk group-booking channel — a pipeline being built to fill beds in blocks.</p>
-        <div class="chips"><span class="chip">Event-manager outreach</span><span class="chip">Group bookings</span></div>
-      </div></div>
-      <div class="card feat" style="grid-column:1/-1"><div class="ic">G</div><div>
-        <h3>Local restaurant network</h3>
-        <p>A two-way cross-referral tie-up with 4–5 nearby restaurants: they keep In &amp; Out pamphlets and forward anyone who needs a stay to us, while we share their menus with guests asking about food. A simple local pipeline that quietly feeds bookings both ways.</p>
-        <div class="chips"><span class="chip">4–5 restaurant partners</span><span class="chip">Two-way referrals</span><span class="chip">Menu sharing</span></div>
-      </div></div>
+    <p class="sec-sub">Seven things rebuilt from the ground up since taking over operations — each one explained, with the real proof.</p>
+  </div>
+</section>
+
+<!-- A · SOFTWARE -->
+<section style="padding-top:34px">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px"><span class="story-num" style="margin-bottom:0">A</span><span class="ey" style="margin-bottom:0">Software &amp; Automation</span></div>
+    <h2 class="sec-title">The whole dorm runs on one dashboard</h2>
+    <p class="sec-sub">No registers, no guesswork. A cloud PMS handles live occupancy, automated check-in / check-out, payments, dues and analytics in real time — the actual system below.</p>
+    <div class="grid g3">
+      <div class="frame"><div class="fbar"><span></span><span></span><span></span></div><img src="assets/shot-portal-dash.png?v=2" alt="Live dashboard"><div class="frcap">Live dashboard — occupancy, check-ins &amp; collections</div></div>
+      <div class="frame"><div class="fbar"><span></span><span></span><span></span></div><img src="assets/shot-portal.png?v=2" alt="Analytics"><div class="frcap">Analytics — revenue, demographics &amp; trends</div></div>
+      <div class="frame"><div class="fbar"><span></span><span></span><span></span></div><img src="assets/shot-portal-pay.png?v=2" alt="Payments"><div class="frcap">Payments — UPI / Cash / OTA, fully tracked</div></div>
     </div>
   </div>
 </section>
 
-<!-- SEE IT LIVE -->
+<!-- B · HOUSEKEEPING -->
+<section class="alt">
+  <div class="wrap">
+    <div class="story">
+      <div class="story-text">
+        <span class="story-num">B</span>
+        <span class="ey">Housekeeping</span>
+        <h2>Rebuilt the team — twice — for spotless turnover</h2>
+        <p class="big-p">Housekeeping was overhauled not once but twice, until quality and reliability were locked in. With floating staff and daily SOPs, all 156 beds turn over cleanly every single day.</p>
+        <ul class="ticks">
+          <li>Team fully changed 2× until standards held</li>
+          <li>Floating staff to cover peaks &amp; gaps</li>
+          <li>Daily SOPs &amp; cleaning checks</li>
+        </ul>
+      </div>
+      <div class="story-visual">
+        <div class="gfx gfx-teal">
+          <div class="huge">2×</div>
+          <p style="font-size:17px;font-weight:700;margin-top:12px;line-height:1.4">Housekeeping team rebuilt — twice — until it was right.</p>
+          <div class="statpills"><span>156 beds / day</span><span>Floating staff</span><span>Daily SOPs</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- C · MARKETING -->
 <section>
   <div class="wrap">
-    <span class="kicker">6 · Built &amp; Live</span>
-    <h2 class="sec-title">See it in action</h2>
-    <p class="sec-sub">Real software, a real booking website — not just slides. This is the actual system running the dorm every day.</p>
-
-    <h3 style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:6px 0 16px">The Management Software</h3>
-    <div class="grid g3" style="margin-bottom:34px">
-      <div class="shot"><div class="dots"><span></span><span></span><span></span></div><img src="assets/shot-portal-dash.png?v=2" alt="Live dashboard"><p class="cap">Live dashboard — occupancy, check-ins &amp; collections</p></div>
-      <div class="shot"><div class="dots"><span></span><span></span><span></span></div><img src="assets/shot-portal.png?v=2" alt="Analytics"><p class="cap">Analytics — revenue, demographics &amp; trends</p></div>
-      <div class="shot"><div class="dots"><span></span><span></span><span></span></div><img src="assets/shot-portal-pay.png?v=2" alt="Payments"><p class="cap">Payments — UPI / Cash / OTA, fully tracked</p></div>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px"><span class="story-num" style="margin-bottom:0">C</span><span class="ey" style="margin-bottom:0">Marketing &amp; Outreach</span></div>
+    <h2 class="sec-title">Many channels — and the ads actually perform</h2>
+    <p class="sec-sub">From on-ground outreach to smart digital targeting. The Google Ads are aimed specifically at people travelling to Ahmedabad — and they're converting hard.</p>
+    <div class="story" style="align-items:stretch">
+      <div class="story-visual">
+        <div class="gfx gfx-white" style="padding:24px">
+          <div class="tiles" style="grid-template-columns:1fr 1fr">
+            <div class="tile"><div class="ti">🪪</div><b>Visiting cards</b><small>on-ground distribution</small></div>
+            <div class="tile"><div class="ti">🚌</div><b>Bus pamphlets</b><small>govt roadways buses</small></div>
+            <div class="tile"><div class="ti">📄</div><b>10,000+ flyers</b><small>distributed locally</small></div>
+            <div class="tile"><div class="ti">🎯</div><b>Google Ads</b><small>travel-intent targeted</small></div>
+            <div class="tile" style="grid-column:1/-1"><div class="ti">💬</div><b>WhatsApp marketing</b><small>rolling out next</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="story-visual">
+        <div class="frame"><div class="fbar"><span></span><span></span><span></span></div><img src="assets/shot-googleads.png?v=2" alt="Google Ads results"><div class="frcap">Google Ads — live "DormExact" search campaign</div></div>
+        <div class="statpills" style="margin-top:16px"><span style="background:rgba(31,182,166,.12);border-color:rgba(31,182,166,.3);color:var(--teal)">19.2% CTR</span><span style="background:var(--paper);border-color:var(--line);color:var(--text)">953 impressions</span><span style="background:var(--paper);border-color:var(--line);color:var(--text)">19 conversions</span><span style="background:var(--paper);border-color:var(--line);color:var(--text)">₹18.59 avg CPC</span></div>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">A 19.2% click-through rate is roughly 4–5× the search-ad average — sharply targeted, low-waste spend.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <h3 style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:6px 0 16px">The Booking Website — inoutdorm.com</h3>
+<!-- D · OTA -->
+<section class="alt">
+  <div class="wrap">
+    <div class="story rev">
+      <div class="story-text">
+        <span class="story-num">D</span>
+        <span class="ey">Online &amp; OTA Listings</span>
+        <h2>Discoverable &amp; bookable, 24×7</h2>
+        <p class="big-p">In &amp; Out is listed on travel platforms so guests find and book it online — reaching far beyond walk-ins. MakeMyTrip already shows up as a live, paying booking channel in the system.</p>
+        <ul class="ticks">
+          <li>MakeMyTrip — confirmed live OTA channel</li>
+          <li>Online discovery beyond walk-ins</li>
+          <li>Bookings flow straight into the PMS</li>
+        </ul>
+      </div>
+      <div class="story-visual">
+        <div class="gfx gfx-navy">
+          <p style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9fb2c6;margin-bottom:16px">Listed &amp; discoverable online</p>
+          <div class="badge-row">
+            <span class="obadge lead">✈️ MakeMyTrip</span>
+            <span class="obadge">&amp; other major travel platforms</span>
+          </div>
+          <div class="statpills" style="margin-top:20px"><span>Online discovery</span><span>24×7 bookings</span><span>Beyond walk-ins</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- E · WEBSITE -->
+<section>
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px"><span class="story-num" style="margin-bottom:0">E</span><span class="ey" style="margin-bottom:0">Own Website — inoutdorm.com</span></div>
+    <h2 class="sec-title">A booking website that pays no commission</h2>
+    <p class="sec-sub">A direct-booking site with instant confirmation, secure payment, and even an in-mall navigation guide so guests find their way to the door. Every booking here is commission-free.</p>
     <div class="grid g3">
-      <div class="shot"><div class="dots"><span></span><span></span><span></span></div><img src="assets/shot-web-home.png?v=2" alt="Homepage"><p class="cap">Homepage — premium dorm, all amenities</p></div>
-      <div class="shot"><div class="dots"><span></span><span></span><span></span></div><img src="assets/shot-booking.png?v=2" alt="Booking page"><p class="cap">Online booking — instant &amp; commission-free</p></div>
-      <div class="shot"><div class="dots"><span></span><span></span><span></span></div><img src="assets/shot-web-dir.png?v=2" alt="Directions"><p class="cap">In-mall navigation guide for guests</p></div>
+      <div class="frame"><div class="fbar"><span></span><span></span><span></span></div><img src="assets/shot-web-home.png?v=2" alt="Homepage"><div class="frcap">Homepage — premium dorm, all amenities</div></div>
+      <div class="frame"><div class="fbar"><span></span><span></span><span></span></div><img src="assets/shot-booking.png?v=2" alt="Booking page"><div class="frcap">Online booking — instant &amp; commission-free</div></div>
+      <div class="frame"><div class="fbar"><span></span><span></span><span></span></div><img src="assets/shot-web-dir.png?v=2" alt="Directions"><div class="frcap">In-mall navigation guide for guests</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- F · GROUP BOOKINGS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="story">
+      <div class="story-text">
+        <span class="story-num">F</span>
+        <span class="ey">Group &amp; Event Bookings</span>
+        <h2>A bulk-booking channel in the making</h2>
+        <p class="big-p">Multiple event managers and organisers have been approached to open a group-booking pipeline — filling beds in blocks and smoothing out demand. The outreach is done; the channel is being built.</p>
+        <ul class="ticks">
+          <li>Outreach to multiple event managers</li>
+          <li>Aimed at bulk / block bookings</li>
+          <li>Smooths occupancy across the week</li>
+        </ul>
+      </div>
+      <div class="story-visual">
+        <div class="gfx gfx-amber">
+          <p style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:16px">Group-booking pipeline</p>
+          <div class="flow">
+            <div class="step"><b>Event managers</b><small>outreach done</small></div>
+            <div class="arrow">→</div>
+            <div class="step"><b>Bulk enquiry</b><small>groups</small></div>
+            <div class="arrow">→</div>
+            <div class="step"><b>Beds in blocks</b><small>filled fast</small></div>
+          </div>
+          <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,.9)">Channel being built to fill beds in blocks &amp; smooth demand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- G · RESTAURANT NETWORK -->
+<section>
+  <div class="wrap">
+    <div class="story rev">
+      <div class="story-text">
+        <span class="story-num">G</span>
+        <span class="ey">Local Restaurant Network</span>
+        <h2>A two-way referral loop with neighbours</h2>
+        <p class="big-p">A simple but smart cross-referral tie-up with 4–5 nearby restaurants: they keep In &amp; Out pamphlets and send anyone who needs a stay to us — and we share their menus with guests asking about food. Both sides feed each other quietly.</p>
+        <ul class="ticks">
+          <li>4–5 nearby restaurant partners</li>
+          <li>They forward stay-seekers to the dorm</li>
+          <li>We hand their menus to hungry guests</li>
+        </ul>
+      </div>
+      <div class="story-visual">
+        <div class="gfx gfx-white">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:14px">
+            <div style="flex:1;text-align:center;background:var(--ink);color:#fff;border-radius:14px;padding:20px 12px"><div style="font-size:26px">🏨</div><b style="display:block;margin-top:6px;font-size:14px">In &amp; Out Dorm</b></div>
+            <div style="flex:0 0 auto;display:flex;flex-direction:column;gap:10px;color:var(--muted);font-size:12px;font-weight:700">
+              <span style="color:var(--teal)">menus to guests →</span>
+              <span style="color:var(--amber)">← stay referrals</span>
+            </div>
+            <div style="flex:1;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 12px"><div style="font-size:26px">🍽️</div><b style="display:block;margin-top:6px;font-size:14px">4–5 Restaurants</b></div>
+          </div>
+          <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:18px">A local pipeline that quietly feeds bookings both ways.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -341,7 +508,7 @@ footer b{color:#fff}
 <!-- NEXT YEAR PLAN -->
 <section class="alt">
   <div class="wrap">
-    <span class="kicker">7 · The Road Ahead</span>
+    <span class="kicker">The Road Ahead</span>
     <h2 class="sec-title">Next 12 months</h2>
     <p class="sec-sub">Build on the FY25-26 base — push the annual run-rate toward ₹88L (+30%) by lifting occupancy, direct bookings and per-guest value.</p>
     <div class="grid g2" style="align-items:start">
