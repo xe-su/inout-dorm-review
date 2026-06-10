@@ -191,12 +191,9 @@ footer b{color:#fff}
         <svg id="incomeChart" viewBox="0 0 560 280" aria-label="Monthly income"></svg>
       </div>
       <div class="card chartbox">
-        <h3 style="font-size:15px;color:#8ea3b8;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px">Net Revenue Split</h3>
-        <svg id="splitChart" viewBox="0 0 280 280" style="max-width:240px;margin:0 auto" aria-label="Revenue split"></svg>
-        <div class="legend" style="justify-content:center;color:#9fb2c6">
-          <span><i style="background:#4a6f9c"></i>Sancube · ₹28.53L (73%)</span>
-          <span><i style="background:#F2A93B"></i>Operator · ₹10.55L (27%)</span>
-        </div>
+        <h3 style="font-size:15px;color:#8ea3b8;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px">Quarterly Performance</h3>
+        <svg id="quarterChart" viewBox="0 0 520 280" aria-label="Quarterly income"></svg>
+        <div class="legend" style="color:#9fb2c6"><span><i style="background:#F2A93B"></i>Income per quarter — steady through the year</span></div>
       </div>
     </div>
   </div>
@@ -390,23 +387,30 @@ footer b{color:#fff}
   svg.innerHTML=s;
 })();
 
-// ---- Donut split ----
+// ---- Quarterly performance ----
 (function(){
-  const svg=document.getElementById('splitChart');
-  const cx=140,cy=140,r=92,sw=40;
-  const total=2853190+1055289;
-  const segs=[{v:2853190,c:'#4a6f9c'},{v:1055289,c:'#F2A93B'}];
-  let a=-Math.PI/2,s='';
-  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="'+sw+'"/>';
-  segs.forEach(function(seg){
-    const frac=seg.v/total, a2=a+frac*2*Math.PI;
-    const x1=cx+r*Math.cos(a),y1=cy+r*Math.sin(a),x2=cx+r*Math.cos(a2),y2=cy+r*Math.sin(a2);
-    const large=frac>0.5?1:0;
-    s+='<path d="M'+x1+' '+y1+' A'+r+' '+r+' 0 '+large+' 1 '+x2+' '+y2+'" fill="none" stroke="'+seg.c+'" stroke-width="'+sw+'"/>';
-    a=a2;
+  const svg=document.getElementById('quarterChart');
+  if(!svg) return;
+  const q=[
+    {l:'Q1',m:'Apr–Jun',v:14.85},
+    {l:'Q2',m:'Jul–Sep',v:18.26},
+    {l:'Q3',m:'Oct–Dec',v:18.54},
+    {l:'Q4',m:'Jan–Mar',v:16.14}
+  ];
+  const W=520,H=280,pad={l:20,r:20,t:30,b:46};
+  const max=20, plotH=H-pad.t-pad.b, plotW=W-pad.l-pad.r;
+  const gap=plotW/q.length, bw=gap*0.5;
+  const mx=Math.max.apply(null,q.map(d=>d.v));
+  let s='';
+  s+='<line x1="'+pad.l+'" y1="'+(pad.t+plotH)+'" x2="'+(W-pad.r)+'" y2="'+(pad.t+plotH)+'" stroke="rgba(255,255,255,.1)" stroke-width="2"/>';
+  q.forEach(function(d,i){
+    const h=(d.v/max)*plotH, x=pad.l+gap*i+(gap-bw)/2, y=pad.t+plotH-h;
+    const peak=d.v===mx;
+    s+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+h+'" rx="6" fill="'+(peak?'#1FB6A6':'#F2A93B')+'"/>';
+    s+='<text x="'+(x+bw/2)+'" y="'+(y-10)+'" text-anchor="middle" font-size="15" font-weight="850" fill="#fff">₹'+d.v+'L</text>';
+    s+='<text x="'+(x+bw/2)+'" y="'+(pad.t+plotH+20)+'" text-anchor="middle" font-size="13" font-weight="800" fill="#cfe">'+d.l+'</text>';
+    s+='<text x="'+(x+bw/2)+'" y="'+(pad.t+plotH+36)+'" text-anchor="middle" font-size="11" fill="#8ea3b8">'+d.m+'</text>';
   });
-  s+='<text x="'+cx+'" y="'+(cy-4)+'" text-anchor="middle" font-size="25" font-weight="850" fill="#fff">₹39.08L</text>';
-  s+='<text x="'+cx+'" y="'+(cy+17)+'" text-anchor="middle" font-size="12" fill="#8ea3b8">Net Revenue</text>';
   svg.innerHTML=s;
 })();
 
