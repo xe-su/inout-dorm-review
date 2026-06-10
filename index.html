@@ -1,447 +1,412 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>In &amp; Out Dorm — FY 2025-26 Review</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏨</text></svg>" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In &amp; Out Dorm — Operations Review FY 2025-26</title>
 <style>
-  :root{
-    --ink:#0E1B2A; --navy:#16273B; --amber:#F2A93B; --amberd:#C9821B;
-    --teal:#1FB6A6; --mute:#8B97A6; --light:#F7F8FA; --card:#FFFFFF;
-    --text:#1A2330; --soft:#606C7A; --line:#E4E8EE;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:#05080d;}
-  .reveal{font-family:'Inter','Segoe UI',system-ui,Arial,sans-serif;font-size:30px;color:var(--text);}
-  .reveal .slides{text-align:left;}
-  .reveal .slides section{height:100%;padding:0!important;top:0!important;}
-  /* base slide surfaces */
-  .slide{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;}
-  .slide.light{background:var(--light);}
-  .slide.dark{background:var(--ink);}
-  .pad{position:absolute;inset:0;padding:54px 64px;}
-  /* typography */
-  h1,h2,h3,p{margin:0;padding:0;line-height:1.12;}
-  .kicker{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:800;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;}
-  .kicker .bar{width:14px;height:26px;background:var(--amber);border-radius:2px;display:inline-block;}
-  .title{font-size:40px;font-weight:800;color:var(--ink);margin-top:14px;letter-spacing:-.5px;}
-  .uline{width:120px;height:5px;background:var(--amber);border-radius:3px;margin-top:14px;}
-  .sub{color:var(--soft);font-size:20px;margin-top:8px;}
-  .foot{position:absolute;left:64px;bottom:26px;font-size:13px;color:var(--mute);}
-  .pg{position:absolute;right:64px;bottom:24px;font-size:14px;color:var(--mute);font-weight:700;}
-  .dark .foot,.dark .pg{color:#5A6A7C;}
-  .leftbar{position:absolute;left:0;top:0;width:10px;height:100%;background:var(--amber);}
-  /* cards */
-  .card{background:var(--card);border-radius:16px;box-shadow:0 18px 40px rgba(20,40,70,.10);}
-  .row{display:flex;gap:18px;}
-  /* lists */
-  ul.f{list-style:none;margin:0;padding:0;}
-  ul.f li{position:relative;padding-left:26px;margin-bottom:15px;font-size:21px;color:var(--text);line-height:1.28;}
-  ul.f li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;background:var(--amber);}
-  ul.f li b{font-weight:800;}
-  ul.f li span{color:var(--soft);font-weight:400;font-size:19px;}
-  ul.f.dark li{color:#E7ECF2;} ul.f.dark li span{color:#A9B6C4;}
-  /* stat tiles */
-  .stat{flex:1;background:var(--card);border-radius:16px;padding:26px 24px;box-shadow:0 18px 40px rgba(20,40,70,.10);position:relative;overflow:hidden;}
-  .stat .cap{height:8px;position:absolute;left:0;top:0;width:100%;}
-  .stat .v{font-size:42px;font-weight:800;letter-spacing:-1px;margin-top:8px;}
-  .stat .l{font-size:17px;color:var(--soft);font-weight:700;margin-top:8px;}
-  .reveal img.chart{border-radius:10px;}
-  table.cmp{border-collapse:separate;border-spacing:0;width:100%;font-size:18px;}
-  table.cmp th,table.cmp td{padding:13px 16px;text-align:left;}
-  table.cmp thead th{color:#fff;font-weight:800;font-size:17px;}
-  table.cmp tbody td{background:#fff;}
-  table.cmp tbody tr:nth-child(even) td{background:#EEF1F5;}
-  table.cmp td.k{background:#20324 6;color:#fff!important;font-weight:800;width:22%;}
-  table.cmp td.k{background:#203246;color:#fff;font-weight:800;width:22%;}
-  table.cmp td.b{color:var(--soft);width:39%;}
-  table.cmp td.n{color:var(--text);font-weight:700;width:39%;}
-  .pill{display:flex;align-items:center;gap:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 12px 26px rgba(20,40,70,.10);}
-  .pill .acc{width:10px;align-self:stretch;background:var(--amber);}
-  .pill .t{padding:20px 22px;font-size:22px;font-weight:800;color:var(--text);}
-  .numbox{width:62px;font-size:34px;font-weight:800;color:var(--amber);text-align:center;}
-  .big{font-size:30px;font-weight:800;line-height:1.18;}
-  .tag{font-size:15px;font-weight:800;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;}
-  .reveal .controls{color:var(--amber);}
-  .reveal .progress{color:var(--amber);}
-  @media (max-width:700px){ .reveal{font-size:26px;} }
+:root{
+  --ink:#0E1B2A; --ink2:#16263b; --amber:#F2A93B; --teal:#1FB6A6;
+  --paper:#F6F8FB; --card:#ffffff; --line:#e7edf3; --muted:#5d7186; --text:#1c2c3d;
+  --good:#27ae60; --shadow:0 10px 30px rgba(14,27,42,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--paper);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:66px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+.kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.sec-title{font-size:clamp(26px,5vw,40px);font-weight:850;color:var(--ink);margin-bottom:10px}
+.sec-sub{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:38px}
+
+/* ---- HERO ---- */
+.hero{background:linear-gradient(135deg,#16263b 0%,#0E1B2A 60%,#0a1421 100%);color:#fff;padding:0;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(242,169,59,.22),transparent 70%)}
+.hero .wrap{padding-top:80px;padding-bottom:80px;position:relative;z-index:2}
+.brandrow{display:flex;align-items:center;gap:13px;margin-bottom:46px}
+.logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--amber),#e0922a);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--ink);font-size:15px}
+.brandrow b{font-size:17px;letter-spacing:.01em}
+.brandrow span{display:block;font-size:12px;color:#9fb2c6;font-weight:500}
+.hero h1{font-size:clamp(34px,7vw,62px);font-weight:880;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:clamp(16px,2.5vw,20px);color:#c2d2e2;max-width:600px;margin-bottom:36px}
+.heroStats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:760px}
+.heroStats .s{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px}
+.heroStats .s b{display:block;font-size:clamp(20px,4vw,30px);font-weight:850;color:#fff}
+.heroStats .s span{font-size:12px;color:#9fb2c6;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.heroStats .s.amber b{color:var(--amber)}
+.heroStats .s.teal b{color:var(--teal)}
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#9fb2c6;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:30px;margin-bottom:30px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(31,182,166,.2)}
+
+/* ---- CARDS ---- */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:clamp(26px,4vw,38px);font-weight:850;color:var(--ink);letter-spacing:-.03em}
+.kpi .lab{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.kpi .sub{font-size:13px;color:var(--muted);margin-top:6px}
+.kpi .up{color:var(--good);font-weight:700}
+
+.alt{background:var(--ink);color:#fff}
+.alt .sec-title{color:#fff}.alt .sec-sub{color:#9fb2c6}
+.alt .card{background:var(--ink2);border-color:rgba(255,255,255,.08)}
+.alt .kpi b{color:#fff}.alt .kpi .lab{color:#8ea3b8}.alt .kpi .sub{color:#9fb2c6}
+
+/* handover */
+.handover{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+.bigjump{background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff;border-radius:22px;padding:34px;text-align:center;position:relative;overflow:hidden}
+.bigjump:after{content:"";position:absolute;left:-40px;bottom:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(31,182,166,.18),transparent 70%)}
+.bigjump .x{font-size:clamp(56px,12vw,96px);font-weight:880;color:var(--amber);line-height:1;position:relative}
+.bigjump .cap{font-size:16px;color:#c2d2e2;margin-top:8px;position:relative}
+.bigjump .pct{color:var(--teal);font-weight:800}
+.cmp{width:100%;border-collapse:collapse;margin-top:8px}
+.cmp td{padding:15px 8px;border-bottom:1px solid var(--line);font-size:15px}
+.cmp tr:last-child td{border-bottom:none}
+.cmp .b{color:var(--muted)}
+.cmp .n{color:var(--ink);font-weight:800;text-align:right}
+.cmp .h{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800}
+
+/* chart */
+.chartbox{width:100%;overflow:hidden}
+svg{display:block;max-width:100%;height:auto}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:middle}
+
+/* did list */
+.feat{display:flex;gap:16px;align-items:flex-start}
+.feat .ic{flex:0 0 50px;width:50px;height:50px;border-radius:14px;background:rgba(242,169,59,.12);color:var(--amber);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800}
+.feat h3{font-size:18px;color:var(--ink);margin-bottom:7px}
+.feat p{font-size:14.5px;color:var(--muted)}
+.feat .chips{margin-top:10px;display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:600;background:var(--paper);border:1px solid var(--line);color:var(--text);padding:5px 11px;border-radius:30px}
+
+/* demographics bars */
+.bar{margin-bottom:15px}
+.bar .t{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.bar .t b{color:var(--ink);font-weight:700}
+.bar .track{height:10px;background:var(--paper);border-radius:20px;overflow:hidden}
+.bar .fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--amber),#e0922a)}
+.alt .bar .track{background:rgba(255,255,255,.08)}
+.alt .bar .t b{color:#fff}.alt .bar .t span{color:#9fb2c6}
+
+.cities li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:15px;list-style:none}
+.cities li:last-child{border-bottom:none}
+.cities .rank{color:var(--amber);font-weight:800;margin-right:10px}
+.cities .v{color:var(--teal);font-weight:700}
+
+/* plan timeline */
+.tl{position:relative;padding-left:30px}
+.tl:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .item{position:relative;padding-bottom:28px}
+.tl .item:before{content:"";position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(242,169,59,.18)}
+.tl .item:last-child{padding-bottom:0}
+.tl h3{font-size:17px;color:var(--ink);margin-bottom:5px}
+.tl .q{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.tl p{font-size:14px;color:var(--muted)}
+
+.note{font-size:12.5px;color:var(--muted);margin-top:22px;font-style:italic}
+footer{background:var(--ink);color:#9fb2c6;text-align:center;padding:40px 20px;font-size:13px}
+footer b{color:#fff}
+.pill{display:inline-block;background:rgba(31,182,166,.14);color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.05em;padding:5px 12px;border-radius:30px;text-transform:uppercase}
+
+@media(max-width:820px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:1fr}
+  .g2{grid-template-columns:1fr}
+  .handover{grid-template-columns:1fr}
+  .heroStats{grid-template-columns:repeat(2,1fr)}
+  section{padding:48px 0}
+}
 </style>
 </head>
 <body>
-<div class="reveal"><div class="slides">
 
-<!-- 1 TITLE -->
-<section data-background-color="#0E1B2A"><div class="slide dark">
-  <div class="leftbar"></div>
-  <div style="position:absolute;right:0;top:0;width:30%;height:100%;background:#16273B;"></div>
-  <div class="pad">
-    <div style="color:var(--amber);font-weight:800;letter-spacing:.12em;font-size:17px;">ANNUAL PERFORMANCE &amp; GROWTH REVIEW</div>
-    <h1 style="font-size:74px;font-weight:800;color:#fff;margin-top:40px;line-height:1;">IN &amp; OUT<br><span style="color:var(--amber);">DORM</span></h1>
-    <div class="uline" style="width:150px;margin-top:26px;"></div>
-    <div style="font-size:30px;font-weight:800;color:#fff;margin-top:26px;">Financial Year 2025-26</div>
-    <div style="font-size:21px;color:var(--mute);margin-top:6px;">Operations, Growth &amp; The Road Ahead</div>
-    <div style="position:absolute;left:64px;bottom:64px;">
-      <div style="font-size:19px;color:#fff;font-weight:700;">Operated by Shubham Panchal &nbsp;·&nbsp; Presented to Sancube</div>
-      <div style="font-size:14px;color:var(--mute);margin-top:6px;">Confidential — for review meeting</div>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="brandrow">
+      <div class="logo">I&amp;O</div>
+      <div><b>In &amp; Out Dormitory</b><span>Ahmedabad &nbsp;·&nbsp; Operated by Shubham Panchal</span></div>
     </div>
-    <div style="position:absolute;right:56px;top:80px;width:25%;">
-      <div style="margin-bottom:40px;"><div style="color:var(--mute);font-size:13px;font-weight:800;letter-spacing:.08em;">TOTAL INCOME</div><div style="color:var(--amber);font-size:38px;font-weight:800;">₹67.78 L</div></div>
-      <div style="margin-bottom:40px;"><div style="color:var(--mute);font-size:13px;font-weight:800;letter-spacing:.08em;">DELIVERED TO SANCUBE</div><div style="color:#fff;font-size:38px;font-weight:800;">₹28.53 L</div></div>
-      <div><div style="color:var(--mute);font-size:13px;font-weight:800;letter-spacing:.08em;">PEAK MONTH GROWTH</div><div style="color:var(--amber);font-size:38px;font-weight:800;">+69%</div></div>
+    <div class="tag"><span class="dot"></span> Live operations · data pulled 10 Jun 2026</div>
+    <h1>Operations Review<br><em>FY 2025-26</em></h1>
+    <p class="lead">From a quiet handover to a <b style="color:#fff">156-bed, ₹67.78 L/year</b> running machine — here's how the dorm grew, what was rebuilt, and where it's headed next.</p>
+    <div class="heroStats">
+      <div class="s amber"><b>₹67.78L</b><span>Annual Income</span></div>
+      <div class="s teal"><b>2.27×</b><span>vs Handover</span></div>
+      <div class="s"><b>69%</b><span>Occupancy</span></div>
+      <div class="s"><b>156</b><span>Beds</span></div>
     </div>
   </div>
-</div></section>
+</header>
 
-<!-- 2 AGENDA -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>OVERVIEW</div>
-  <div class="title">Agenda</div><div class="uline"></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;">
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;"><div style="font-size:40px;font-weight:800;color:var(--amber);width:70px;">01</div><div style="width:2px;height:46px;background:var(--line);margin-right:22px;"></div><div style="font-size:21px;font-weight:800;">Where we started — the takeover</div></div>
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;"><div style="font-size:40px;font-weight:800;color:var(--amber);width:70px;">02</div><div style="width:2px;height:46px;background:var(--line);margin-right:22px;"></div><div style="font-size:21px;font-weight:800;">Pehle vs Abhi — the transformation</div></div>
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;"><div style="font-size:40px;font-weight:800;color:var(--amber);width:70px;">03</div><div style="width:2px;height:46px;background:var(--line);margin-right:22px;"></div><div style="font-size:21px;font-weight:800;">FY25-26 performance snapshot</div></div>
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;"><div style="font-size:40px;font-weight:800;color:var(--amber);width:70px;">04</div><div style="width:2px;height:46px;background:var(--line);margin-right:22px;"></div><div style="font-size:21px;font-weight:800;">What we built — systems &amp; operations</div></div>
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;"><div style="font-size:40px;font-weight:800;color:var(--amber);width:70px;">05</div><div style="width:2px;height:46px;background:var(--line);margin-right:22px;"></div><div style="font-size:21px;font-weight:800;">Marketing, distribution &amp; bookings</div></div>
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;"><div style="font-size:40px;font-weight:800;color:var(--amber);width:70px;">06</div><div style="width:2px;height:46px;background:var(--line);margin-right:22px;"></div><div style="font-size:21px;font-weight:800;">The road ahead — next 12 months</div></div>
-  </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">02</div>
-</div></div></section>
-
-<!-- 3 SECTION 01 -->
-<section data-background-color="#0E1B2A"><div class="slide dark"><div class="leftbar"></div><div class="pad">
-  <div style="font-size:120px;font-weight:800;color:#24374D;position:absolute;left:64px;top:200px;">01</div>
-  <div style="position:absolute;left:230px;top:240px;">
-    <h1 style="font-size:52px;font-weight:800;color:#fff;">Where We Started</h1>
-    <div class="uline" style="margin-top:16px;"></div>
-    <div style="font-size:21px;color:var(--mute);margin-top:18px;max-width:760px;">Taking over an operation with no systems, flat revenue and an untrained team.</div>
-  </div>
-  <div class="pg">03</div>
-</div></div></section>
-
-<!-- 4 STARTING POINT -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>THE STARTING POINT</div>
-  <div class="title">Inherited an Operation — Built a System</div><div class="uline"></div>
-  <div class="row" style="margin-top:34px;">
-    <div style="flex:1;">
-      <div style="font-size:20px;font-weight:800;color:var(--amber);margin-bottom:16px;">What we inherited</div>
-      <ul class="f">
-        <li>Took over full operations from the previous operator</li>
-        <li>No standard processes (SOPs) — everything manual</li>
-        <li>No software — bookings &amp; cash tracked on paper</li>
-        <li>Weak online presence; minimal direct bookings</li>
-        <li>Untrained housekeeping &amp; front-desk team</li>
-      </ul>
-    </div>
-    <div class="card" style="flex:1;background:var(--ink);padding:28px 30px;">
-      <div class="tag">Our Day-1 Execution Plan (2024)</div>
-      <ul class="f dark" style="margin-top:14px;">
-        <li>Takeover all access &amp; build the team</li>
-        <li>Write SOPs for every process</li>
-        <li>Install management software</li>
-        <li>Online presence &amp; QR feedback system</li>
-        <li>Theme &amp; ambience upgrade</li>
-        <li>Data analytics + retain old customers</li>
-        <li>Market research for strategic pricing</li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">04</div>
-</div></div></section>
-
-<!-- 5 PEHLE vs ABHI -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>THE TRANSFORMATION</div>
-  <div class="title">Pehle &nbsp;vs&nbsp; Abhi</div><div class="uline"></div>
-  <div class="row" style="margin-top:22px;align-items:flex-start;">
-    <div style="width:46%;">
-      <img class="chart" src="assets/chart_handover.png" style="width:100%;" />
-      <div style="font-size:14px;color:var(--mute);margin-top:4px;">Avg monthly sales — IN &amp; OUT Ahmedabad (source: sales analytics)</div>
-    </div>
-    <div style="flex:1;padding-left:26px;">
-      <div class="card" style="background:var(--ink);padding:16px 22px;margin-bottom:14px;display:flex;align-items:center;gap:18px;">
-        <div style="font-size:42px;font-weight:800;color:var(--amber);">2.27×</div>
-        <div style="color:#E7ECF2;font-size:17px;font-weight:700;line-height:1.25;">jump in monthly sales after<br>Shubham's handover <span style="color:var(--teal);">(+127%)</span></div>
+<!-- HANDOVER GROWTH -->
+<section>
+  <div class="wrap">
+    <span class="kicker">1 · Growth — Pehle vs Abhi</span>
+    <h2 class="sec-title">The handover turnaround</h2>
+    <p class="sec-sub">When operations were taken over, monthly sales were sitting at under ₹2 L. Within a year of new management, they more than doubled — and have stayed high ever since.</p>
+    <div class="handover">
+      <div class="card chartbox">
+        <h3 style="font-size:15px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px">Avg Monthly Sales</h3>
+        <svg viewBox="0 0 460 250" role="img" aria-label="Before vs after handover">
+          <line x1="50" y1="200" x2="440" y2="200" stroke="#e7edf3" stroke-width="2"/>
+          <rect x="95" y="142" width="90" height="58" rx="6" fill="#9fb2c6"/>
+          <text x="140" y="132" text-anchor="middle" font-size="16" font-weight="800" fill="#5d7186">₹1.97L</text>
+          <text x="140" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#5d7186">BEFORE</text>
+          <text x="140" y="236" text-anchor="middle" font-size="11" fill="#9fb2c6">FY22-23</text>
+          <rect x="290" y="69" width="90" height="131" rx="6" fill="#F2A93B"/>
+          <text x="335" y="59" text-anchor="middle" font-size="16" font-weight="800" fill="#0E1B2A">₹4.47L</text>
+          <text x="335" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#0E1B2A">AFTER</text>
+          <text x="335" y="236" text-anchor="middle" font-size="11" fill="#9fb2c6">FY23-24</text>
+          <path d="M188 138 Q240 80 287 78" stroke="#1FB6A6" stroke-width="2.5" fill="none" stroke-dasharray="5 5"/>
+          <polygon points="287,72 297,79 285,85" fill="#1FB6A6"/>
+        </svg>
       </div>
-      <table class="cmp" style="font-size:15px;">
-        <thead><tr>
-          <th style="background:#16273B;border-radius:8px 0 0 0;">BEFORE</th>
-          <th style="background:#F2A93B;color:#0E1B2A;border-radius:0 8px 0 0;">NOW</th>
-        </tr></thead>
-        <tbody>
-          <tr><td class="b">Manual — no SOPs</td><td class="n">Documented SOPs everywhere</td></tr>
-          <tr><td class="b">Paper / registers</td><td class="n">Automated PMS software</td></tr>
-          <tr><td class="b">Walk-in dependent</td><td class="n">OTAs + own website bookings</td></tr>
-          <tr><td class="b">Inconsistent staff</td><td class="n">Revamped team + floating backup</td></tr>
-          <tr><td class="b">No marketing</td><td class="n">Active multi-channel marketing</td></tr>
-          <tr><td class="b">₹1.97 L / mo (FY22-23)</td><td class="n">₹5.65 L / mo (FY25-26)</td></tr>
-        </tbody>
-      </table>
+      <div>
+        <div class="bigjump">
+          <div class="x">2.27×</div>
+          <div class="cap">jump in monthly sales after handover <span class="pct">(+127%)</span></div>
+        </div>
+        <table class="cmp">
+          <tr><td class="h">Metric</td><td class="h" style="text-align:right">Then → Now</td></tr>
+          <tr><td class="b">Avg monthly sales</td><td class="n">₹1.97L → ₹5.65L</td></tr>
+          <tr><td class="b">Annual run-rate</td><td class="n">~₹23.6L → ₹67.78L</td></tr>
+          <tr><td class="b">Occupancy</td><td class="n">Low → 69%</td></tr>
+        </table>
+      </div>
     </div>
   </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">05</div>
-</div></div></section>
+</section>
 
-<!-- 6 SECTION 02 -->
-<section data-background-color="#0E1B2A"><div class="slide dark"><div class="leftbar"></div><div class="pad">
-  <div style="font-size:120px;font-weight:800;color:#24374D;position:absolute;left:64px;top:200px;">02</div>
-  <div style="position:absolute;left:230px;top:240px;">
-    <h1 style="font-size:52px;font-weight:800;color:#fff;">Performance Snapshot</h1>
-    <div class="uline" style="margin-top:16px;"></div>
-    <div style="font-size:21px;color:var(--mute);margin-top:18px;max-width:760px;">FY 2025-26 — the numbers that matter to Sancube.</div>
-  </div>
-  <div class="pg">06</div>
-</div></div></section>
-
-<!-- 7 BIG NUMBERS -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>FY 2025-26 RESULTS</div>
-  <div class="title">A Year of Strong, Consistent Performance</div><div class="uline"></div>
-  <div class="row" style="margin-top:30px;">
-    <div class="stat"><div class="cap" style="background:var(--amber);"></div><div class="v" style="color:var(--amber);">₹67.78 L</div><div class="l">Total Dormitory Income</div></div>
-    <div class="stat"><div class="cap" style="background:var(--teal);"></div><div class="v" style="color:var(--teal);">₹39.08 L</div><div class="l">Net Revenue (57.7% margin)</div></div>
-    <div class="stat"><div class="cap" style="background:var(--ink);"></div><div class="v" style="color:var(--ink);">₹28.53 L</div><div class="l">Delivered to Sancube (73%)</div></div>
-    <div class="stat"><div class="cap" style="background:var(--amberd);"></div><div class="v" style="color:var(--amberd);">+69%</div><div class="l">Low-to-Peak Month Growth</div></div>
-  </div>
-  <div class="card" style="background:var(--ink);margin-top:26px;padding:26px 30px;display:flex;justify-content:space-between;">
-    <div><div style="font-size:30px;font-weight:800;color:var(--amber);">₹5.65 L</div><div style="font-size:16px;color:#C2CDD8;margin-top:4px;">Avg Monthly Income</div></div>
-    <div style="width:2px;background:#2A3C50;"></div>
-    <div><div style="font-size:30px;font-weight:800;color:var(--amber);">₹6.83 L</div><div style="font-size:16px;color:#C2CDD8;margin-top:4px;">Peak Month (Dec)</div></div>
-    <div style="width:2px;background:#2A3C50;"></div>
-    <div><div style="font-size:30px;font-weight:800;color:var(--amber);">₹46.83 L</div><div style="font-size:16px;color:#C2CDD8;margin-top:4px;">Bank-Settled Income</div></div>
-    <div style="width:2px;background:#2A3C50;"></div>
-    <div><div style="font-size:30px;font-weight:800;color:var(--amber);">12/12</div><div style="font-size:16px;color:#C2CDD8;margin-top:4px;">Profitable Months</div></div>
-  </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">07</div>
-</div></div></section>
-
-<!-- 8 MONTHLY TREND -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>REVENUE TREND</div>
-  <div class="title">Month-on-Month Income &amp; Net Revenue</div><div class="uline"></div>
-  <div class="row" style="margin-top:30px;align-items:flex-start;">
-    <img class="chart" src="assets/chart_income.png" style="width:64%;" />
-    <div class="card" style="flex:1;background:var(--ink);padding:24px 26px;margin-left:6px;">
-      <div class="tag">Reading the trend</div>
-      <ul class="f dark" style="margin-top:14px;font-size:19px;">
-        <li>Steady climb from Jun low to Dec peak</li>
-        <li>H2 outperformed H1 — momentum building</li>
-        <li>Every single month profitable</li>
-        <li>Festive Q3 (Oct-Dec) strongest quarter</li>
-      </ul>
+<!-- FY FINANCIALS -->
+<section class="alt">
+  <div class="wrap">
+    <span class="kicker">2 · Financial Performance</span>
+    <h2 class="sec-title">FY 2025-26 in numbers</h2>
+    <p class="sec-sub">A full year of operations — every single month profitable, with a healthy net margin after all expenses.</p>
+    <div class="grid g4" style="margin-bottom:18px">
+      <div class="card kpi"><div class="lab">Total Income</div><b>₹67.78L</b><div class="sub">Apr '25 – Mar '26</div></div>
+      <div class="card kpi"><div class="lab">Total Expenses</div><b>₹28.70L</b><div class="sub">Staff · housekeeping · utilities</div></div>
+      <div class="card kpi"><div class="lab">Net Revenue</div><b>₹39.08L</b><div class="sub"><span class="up">57.7% margin</span></div></div>
+      <div class="card kpi"><div class="lab">Avg / Month</div><b>₹5.65L</b><div class="sub">Peak Dec ₹6.83L</div></div>
+    </div>
+    <div class="grid g2">
+      <div class="card chartbox">
+        <h3 style="font-size:15px;color:#8ea3b8;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px">Monthly Income — all 12 months profitable</h3>
+        <svg id="incomeChart" viewBox="0 0 560 280" aria-label="Monthly income"></svg>
+      </div>
+      <div class="card chartbox">
+        <h3 style="font-size:15px;color:#8ea3b8;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px">Net Revenue Split</h3>
+        <svg id="splitChart" viewBox="0 0 280 280" style="max-width:240px;margin:0 auto" aria-label="Revenue split"></svg>
+        <div class="legend" style="justify-content:center;color:#9fb2c6">
+          <span><i style="background:#4a6f9c"></i>Sancube · ₹28.53L (73%)</span>
+          <span><i style="background:#F2A93B"></i>Operator · ₹10.55L (27%)</span>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">08</div>
-</div></div></section>
+</section>
 
-<!-- 9 SPLIT + QUARTER -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>VALUE TO SANCUBE</div>
-  <div class="title">Revenue Share &amp; Quarterly Breakdown</div><div class="uline"></div>
-  <div class="row" style="margin-top:24px;align-items:center;">
-    <img class="chart" src="assets/chart_split.png" style="width:43%;" />
-    <img class="chart" src="assets/chart_quarter.png" style="width:50%;" />
-  </div>
-  <div style="font-size:20px;color:var(--soft);font-weight:700;margin-top:14px;">Sancube received <b style="color:var(--ink);">₹28.53 Lakh (73% of net)</b> — the strongest return the property has delivered.</div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">09</div>
-</div></div></section>
-
-<!-- 10 SECTION 03 -->
-<section data-background-color="#0E1B2A"><div class="slide dark"><div class="leftbar"></div><div class="pad">
-  <div style="font-size:120px;font-weight:800;color:#24374D;position:absolute;left:64px;top:200px;">03</div>
-  <div style="position:absolute;left:230px;top:240px;">
-    <h1 style="font-size:52px;font-weight:800;color:#fff;">What We Built</h1>
-    <div class="uline" style="margin-top:16px;"></div>
-    <div style="font-size:21px;color:var(--mute);margin-top:18px;max-width:760px;">The systems, team and engine behind the numbers.</div>
-  </div>
-  <div class="pg">10</div>
-</div></div></section>
-
-<!-- 11 SOFTWARE -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>WHAT WE BUILT · A</div>
-  <div class="title">Software &amp; Full Automation</div><div class="uline"></div>
-  <div class="row" style="margin-top:34px;align-items:stretch;">
-    <div class="card" style="width:42%;background:var(--ink);padding:30px;display:flex;flex-direction:column;justify-content:center;">
-      <div class="tag">Automation</div>
-      <div class="big" style="color:#fff;margin-top:16px;">From paper registers to a fully automated property management system.</div>
+<!-- LIVE OPS -->
+<section>
+  <div class="wrap">
+    <span class="kicker">3 · Live Operations Snapshot</span>
+    <h2 class="sec-title">Running, right now</h2>
+    <p class="sec-sub">Real-time numbers straight from the management system — not estimates. This is the dorm at 10 Jun 2026.</p>
+    <div class="grid g4">
+      <div class="card kpi"><div class="lab">Occupancy</div><b>69%</b><div class="sub">108 of 156 beds filled</div></div>
+      <div class="card kpi"><div class="lab">Guests In-House</div><b>107</b><div class="sub">across 4 dorm blocks</div></div>
+      <div class="card kpi"><div class="lab">Active Bookings</div><b>92</b><div class="sub">live in the system</div></div>
+      <div class="card kpi"><div class="lab">This Month</div><b>276</b><div class="sub">bookings · 203 unique guests</div></div>
     </div>
-    <div style="flex:1;padding-left:36px;display:flex;align-items:center;">
-      <ul class="f">
-        <li><b>Automated PMS installed</b> <span>— bookings, check-in/out, billing in one place</span></li>
-        <li><b>Real-time occupancy &amp; cash tracking</b> <span>— no more manual registers</span></li>
-        <li><b>Digital records</b> <span>— every transaction logged &amp; auditable</span></li>
-        <li><b>QR-code feedback system</b> <span>— guest reviews captured automatically</span></li>
-        <li><b>Owner visibility</b> <span>— performance viewable any time</span></li>
-      </ul>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <div class="lab" style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Room Inventory</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)"><span>Lower / Upper Gents</span><b>112 beds</b></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)"><span>Lower / Upper Ladies</span><b>44 beds</b></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0"><span>Flat tariff</span><b>₹350 / bed · incl GST</b></div>
+      </div>
+      <div class="card kpi"><div class="lab">Avg Stay</div><b>1.6 days</b><div class="sub">high-velocity, daily-stay model</div></div>
+      <div class="card kpi"><div class="lab">Repeat Guests</div><b>21%</b><div class="sub">customers with 2+ bookings</div></div>
     </div>
   </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">11</div>
-</div></div></section>
+</section>
 
-<!-- 12 OPERATIONS -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>WHAT WE BUILT · B</div>
-  <div class="title">Operations &amp; Housekeeping</div><div class="uline"></div>
-  <div class="row" style="margin-top:34px;align-items:stretch;">
-    <div class="card" style="width:42%;background:var(--ink);padding:30px;display:flex;flex-direction:column;justify-content:center;">
-      <div class="tag">Operations</div>
-      <div class="big" style="color:#fff;margin-top:16px;">A trained, reliable team — with backup so service never drops.</div>
+<!-- GUEST INSIGHTS -->
+<section class="alt">
+  <div class="wrap">
+    <span class="kicker">4 · Who Stays With Us</span>
+    <h2 class="sec-title">Know the guest</h2>
+    <p class="sec-sub">Live demographic data from the booking system — the foundation for every pricing, marketing and amenity decision.</p>
+    <div class="grid g2">
+      <div class="card">
+        <div class="lab" style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8ea3b8;margin-bottom:18px">Age Distribution</div>
+        <div class="bar"><div class="t"><b>26–35 yrs</b><span>47%</span></div><div class="track"><div class="fill" style="width:47%"></div></div></div>
+        <div class="bar"><div class="t"><b>18–25 yrs</b><span>24%</span></div><div class="track"><div class="fill" style="width:24%"></div></div></div>
+        <div class="bar"><div class="t"><b>36–45 yrs</b><span>19%</span></div><div class="track"><div class="fill" style="width:19%"></div></div></div>
+        <div class="bar"><div class="t"><b>46–55 yrs</b><span>7%</span></div><div class="track"><div class="fill" style="width:7%"></div></div></div>
+        <div class="bar" style="margin-bottom:0"><div class="t"><b>Other</b><span>3%</span></div><div class="track"><div class="fill" style="width:3%"></div></div></div>
+        <p style="font-size:13px;color:#9fb2c6;margin-top:14px">71% of guests are 18–35 — a young, working-age crowd.</p>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:18px">
+          <div class="lab" style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8ea3b8;margin-bottom:16px">Top Source Cities</div>
+          <ul class="cities" style="padding:0;margin:0">
+            <li><span><span class="rank">1</span>Banaskantha</span><span class="v">Highest</span></li>
+            <li><span><span class="rank">2</span>Jodhpur</span></li>
+            <li><span><span class="rank">3</span>Surat</span></li>
+            <li><span><span class="rank">4</span>Kachchh</span></li>
+            <li><span><span class="rank">5</span>Ahmedabad</span></li>
+          </ul>
+        </div>
+        <div class="grid g2">
+          <div class="card kpi"><div class="lab" style="color:#8ea3b8">Gender</div><b style="color:#fff">99%</b><div class="sub">male traveller base</div></div>
+          <div class="card kpi"><div class="lab" style="color:#8ea3b8">Peak Check-in</div><b style="color:#fff">7–11 PM</b><div class="sub">evening arrivals</div></div>
+        </div>
+      </div>
     </div>
-    <div style="flex:1;padding-left:36px;display:flex;align-items:center;">
-      <ul class="f">
-        <li><b>Housekeeping team revamped twice</b> <span>— upgraded to the right people</span></li>
-        <li><b>Floating staff introduced</b> <span>— instant replacement when staff on leave</span></li>
-        <li><b>SOPs for every process</b> <span>— consistent service, less person-dependency</span></li>
-        <li><b>Theme &amp; ambience upgrade</b> <span>— wall paintings, quotes, décor</span></li>
-        <li><b>Hygiene &amp; laundry standards</b> <span>— systematic, vendor-managed</span></li>
-      </ul>
-    </div>
+    <p class="note">Takeaway: a young male, Rajasthan + Gujarat working/transit crowd, arriving at night on short daily stays — exactly who the gents-heavy 112-bed layout and ₹350 daily tariff are built for.</p>
   </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">12</div>
-</div></div></section>
+</section>
 
-<!-- 13 MARKETING -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>WHAT WE BUILT · C</div>
-  <div class="title">Marketing Engine</div><div class="uline"></div>
-  <div class="row" style="margin-top:34px;align-items:stretch;">
-    <div class="card" style="width:42%;background:var(--ink);padding:30px;display:flex;flex-direction:column;justify-content:center;">
-      <div class="tag">Marketing</div>
-      <div class="big" style="color:#fff;margin-top:16px;">Active, multi-channel marketing that drives direct &amp; repeat bookings.</div>
-    </div>
-    <div style="flex:1;padding-left:36px;display:flex;align-items:center;">
-      <ul class="f">
-        <li><b>Promotional video created</b> <span>— for social &amp; listings</span></li>
-        <li><b>WhatsApp campaigns</b> <span>— notifications + discount coupons for regulars</span></li>
-        <li><b>Customer retention</b> <span>— data-driven win-back of old guests</span></li>
-        <li><b>Strategic pricing</b> <span>— based on nearby hotel/dorm research</span></li>
-        <li><b>Visiting cards &amp; on-ground branding</b> <span>— local visibility</span></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">13</div>
-</div></div></section>
-
-<!-- 14 DISTRIBUTION -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>WHAT WE BUILT · D</div>
-  <div class="title">Online Distribution</div><div class="uline"></div>
-  <div class="sub" style="margin-top:14px;">Listed across major travel platforms — maximising visibility &amp; occupancy.</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:30px;">
-    <div class="pill"><div class="acc"></div><div class="t">MakeMyTrip</div></div>
-    <div class="pill"><div class="acc"></div><div class="t">Goibibo</div></div>
-    <div class="pill"><div class="acc"></div><div class="t">Booking.com</div></div>
-    <div class="pill"><div class="acc"></div><div class="t">Agoda</div></div>
-    <div class="pill"><div class="acc"></div><div class="t">Hostelworld</div></div>
-    <div class="pill"><div class="acc"></div><div class="t">Zostel</div></div>
-  </div>
-  <div style="font-size:15px;color:var(--mute);margin-top:26px;">⚑ Platform list to be confirmed — update with your live OTA accounts.</div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">14</div>
-</div></div></section>
-
-<!-- 15 WEBSITE -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>WHAT WE BUILT · E</div>
-  <div class="title">Our Own Website — inoutdorm.com</div><div class="uline"></div>
-  <div class="row" style="margin-top:34px;align-items:stretch;">
-    <div class="card" style="width:42%;background:var(--ink);padding:30px;display:flex;flex-direction:column;justify-content:center;">
-      <div class="tag">Direct Channel</div>
-      <div class="big" style="color:#fff;margin-top:16px;">A booking website we own — zero commission, full control.</div>
-      <div style="color:var(--amber);font-size:24px;font-weight:800;margin-top:24px;">inoutdorm.com</div>
-    </div>
-    <div style="flex:1;padding-left:36px;display:flex;align-items:center;">
-      <ul class="f">
-        <li><b>Direct online bookings</b> <span>— guests book straight from the site</span></li>
-        <li><b>In-built navigation</b> <span>— customers find &amp; reach the dorm easily</span></li>
-        <li><b>Brand presence</b> <span>— professional face for the property</span></li>
-        <li><b>No OTA commission</b> <span>— higher margin on every direct booking</span></li>
-        <li><b>Foundation for growth</b> <span>— ready to scale marketing onto it</span></li>
-      </ul>
+<!-- WHAT WE'VE DONE -->
+<section>
+  <div class="wrap">
+    <span class="kicker">5 · What's Been Built</span>
+    <h2 class="sec-title">The operational overhaul</h2>
+    <p class="sec-sub">Six pillars rebuilt from the ground up since taking over operations.</p>
+    <div class="grid g2">
+      <div class="card feat"><div class="ic">A</div><div>
+        <h3>Software &amp; automation</h3>
+        <p>Moved the entire dorm onto a cloud PMS — live occupancy, automated check-in/out, payments, dues tracking and analytics, all on one dashboard.</p>
+        <div class="chips"><span class="chip">Live PMS</span><span class="chip">Auto payments</span><span class="chip">Real-time analytics</span></div>
+      </div></div>
+      <div class="card feat"><div class="ic">B</div><div>
+        <h3>Housekeeping revamp</h3>
+        <p>Rebuilt the housekeeping team twice to fix quality and reliability, added floating staff and SOPs so 156 beds turn over cleanly every day.</p>
+        <div class="chips"><span class="chip">Team changed 2×</span><span class="chip">Daily SOPs</span><span class="chip">Floating staff</span></div>
+      </div></div>
+      <div class="card feat"><div class="ic">C</div><div>
+        <h3>Marketing engine</h3>
+        <p>Promo video, WhatsApp coupon campaigns, visiting cards and on-ground outreach to keep the funnel full and drive repeat stays (now 21%).</p>
+        <div class="chips"><span class="chip">Promo video</span><span class="chip">WhatsApp coupons</span><span class="chip">Print &amp; outreach</span></div>
+      </div></div>
+      <div class="card feat"><div class="ic">D</div><div>
+        <h3>Online &amp; OTA listings</h3>
+        <p>Listed In &amp; Out across major travel platforms so guests can discover and book online — broadening reach well beyond walk-ins.</p>
+        <div class="chips"><span class="chip">OTA listings</span><span class="chip">Online discovery</span></div>
+      </div></div>
+      <div class="card feat"><div class="ic">E</div><div>
+        <h3>Own website — inoutdorm.com</h3>
+        <p>Built a direct-booking website with location &amp; navigation guidance for guests — commission-free bookings now flow straight in.</p>
+        <div class="chips"><span class="chip">Direct bookings</span><span class="chip">Navigation</span><span class="chip">Zero commission</span></div>
+      </div></div>
+      <div class="card feat"><div class="ic">F</div><div>
+        <h3>Group &amp; event bookings</h3>
+        <p>Tied up with event companies to capture bulk group bookings — filling beds in blocks and smoothing out demand.</p>
+        <div class="chips"><span class="chip">Event tie-ups</span><span class="chip">Bulk bookings</span></div>
+      </div></div>
     </div>
   </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">15</div>
-</div></div></section>
+</section>
 
-<!-- 16 GROUP BOOKINGS -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>WHAT WE BUILT · F</div>
-  <div class="title">Group Bookings &amp; Events</div><div class="uline"></div>
-  <div class="sub" style="margin-top:14px;">Building B2B demand for bulk, high-value occupancy.</div>
-  <div style="margin-top:30px;">
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;margin-bottom:18px;"><div style="width:10px;align-self:stretch;background:var(--teal);border-radius:4px;margin-right:24px;"></div><div style="width:32%;font-size:22px;font-weight:800;">Event Organisers</div><div style="width:2px;height:40px;background:var(--line);margin-right:24px;"></div><div style="font-size:19px;color:var(--soft);">In talks with event companies for bulk group bookings</div></div>
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;margin-bottom:18px;"><div style="width:10px;align-self:stretch;background:var(--teal);border-radius:4px;margin-right:24px;"></div><div style="width:32%;font-size:22px;font-weight:800;">Nearby Restaurants &amp; Shops</div><div style="width:2px;height:40px;background:var(--line);margin-right:24px;"></div><div style="font-size:19px;color:var(--soft);">Local tie-ups to drive referral footfall</div></div>
-    <div class="card" style="display:flex;align-items:center;padding:22px 26px;"><div style="width:10px;align-self:stretch;background:var(--teal);border-radius:4px;margin-right:24px;"></div><div style="width:32%;font-size:22px;font-weight:800;">Corporate / Institutional</div><div style="width:2px;height:40px;background:var(--line);margin-right:24px;"></div><div style="font-size:19px;color:var(--soft);">Target steady group demand year-round</div></div>
-  </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">16</div>
-</div></div></section>
-
-<!-- 17 SECTION 04 -->
-<section data-background-color="#0E1B2A"><div class="slide dark"><div class="leftbar"></div><div class="pad">
-  <div style="font-size:120px;font-weight:800;color:#24374D;position:absolute;left:64px;top:200px;">04</div>
-  <div style="position:absolute;left:230px;top:240px;">
-    <h1 style="font-size:52px;font-weight:800;color:#fff;">The Road Ahead</h1>
-    <div class="uline" style="margin-top:16px;"></div>
-    <div style="font-size:21px;color:var(--mute);margin-top:18px;max-width:760px;">Our plan for the next 12 months.</div>
-  </div>
-  <div class="pg">17</div>
-</div></div></section>
-
-<!-- 18 NEXT 12 MONTHS -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>NEXT 12 MONTHS</div>
-  <div class="title">Growth Plan FY 2026-27</div><div class="uline"></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;">
-    <div class="card" style="display:flex;align-items:center;padding:18px 24px;"><div class="numbox">01</div><div><div style="font-size:20px;font-weight:800;">Push direct bookings</div><div style="font-size:16px;color:var(--soft);">scale inoutdorm.com + paid marketing</div></div></div>
-    <div class="card" style="display:flex;align-items:center;padding:18px 24px;"><div class="numbox">02</div><div><div style="font-size:20px;font-weight:800;">Maximise OTA mix</div><div style="font-size:16px;color:var(--soft);">optimise pricing &amp; reviews across platforms</div></div></div>
-    <div class="card" style="display:flex;align-items:center;padding:18px 24px;"><div class="numbox">03</div><div><div style="font-size:20px;font-weight:800;">Lock group &amp; event deals</div><div style="font-size:16px;color:var(--soft);">convert ongoing talks into recurring bulk bookings</div></div></div>
-    <div class="card" style="display:flex;align-items:center;padding:18px 24px;"><div class="numbox">04</div><div><div style="font-size:20px;font-weight:800;">Deepen automation</div><div style="font-size:16px;color:var(--soft);">upsells, dynamic pricing, guest CRM</div></div></div>
-    <div class="card" style="display:flex;align-items:center;padding:18px 24px;"><div class="numbox">05</div><div><div style="font-size:20px;font-weight:800;">Retention engine</div><div style="font-size:16px;color:var(--soft);">loyalty offers &amp; WhatsApp win-backs</div></div></div>
-    <div class="card" style="display:flex;align-items:center;padding:18px 24px;"><div class="numbox">06</div><div><div style="font-size:20px;font-weight:800;">Tighten cost control</div><div style="font-size:16px;color:var(--soft);">keep margin healthy as revenue grows</div></div></div>
-  </div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">18</div>
-</div></div></section>
-
-<!-- 19 TARGET -->
-<section data-background-color="#F7F8FA"><div class="slide light"><div class="pad">
-  <div class="kicker"><span class="bar"></span>THE TARGET</div>
-  <div class="title">Where We Aim to Take It</div><div class="uline"></div>
-  <div class="row" style="margin-top:30px;align-items:center;">
-    <img class="chart" src="assets/chart_projection.png" style="width:46%;" />
-    <div class="card" style="flex:1;background:var(--ink);padding:30px;margin-left:10px;">
-      <div class="tag">FY 2026-27 Goal</div>
-      <div style="font-size:34px;font-weight:800;color:#fff;margin-top:14px;">₹88 L+ annual income</div>
-      <div style="font-size:19px;color:var(--teal);font-weight:800;margin-top:8px;">~30% growth over FY25-26</div>
-      <ul class="f dark" style="margin-top:18px;font-size:18px;">
-        <li>Higher occupancy via direct + group bookings</li>
-        <li>Better margin from own-website channel</li>
-        <li>More return to Sancube, year on year</li>
-      </ul>
+<!-- NEXT YEAR PLAN -->
+<section class="alt">
+  <div class="wrap">
+    <span class="kicker">6 · The Road Ahead</span>
+    <h2 class="sec-title">Next 12 months</h2>
+    <p class="sec-sub">Build on the FY25-26 base — push the annual run-rate toward ₹88L (+30%) by lifting occupancy, direct bookings and per-guest value.</p>
+    <div class="grid g2" style="align-items:start">
+      <div class="card chartbox">
+        <h3 style="font-size:15px;color:#8ea3b8;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px">Income Target</h3>
+        <svg id="targetChart" viewBox="0 0 460 260" aria-label="FY27 target"></svg>
+        <div class="legend" style="color:#9fb2c6"><span><i style="background:#1FB6A6"></i>FY25-26 actual ₹67.78L</span><span><i style="background:#F2A93B"></i>FY26-27 target ₹88L</span></div>
+      </div>
+      <div class="card">
+        <div class="tl">
+          <div class="item"><div class="q">Q1 — Lift occupancy</div><h3>69% → 80%+</h3><p>Push weekday occupancy with corporate &amp; contractor tie-ups and the source cities already proven (Banaskantha, Jodhpur).</p></div>
+          <div class="item"><div class="q">Q2 — Direct-booking share</div><h3>Cut OTA commission leakage</h3><p>Drive more traffic to inoutdorm.com and WhatsApp, growing zero-commission direct revenue.</p></div>
+          <div class="item"><div class="q">Q3 — Per-guest value</div><h3>Add-ons &amp; longer stays</h3><p>Introduce meal / locker / laundry add-ons and weekly-stay packages to grow the 21% repeat base and avg ticket.</p></div>
+          <div class="item"><div class="q">Q4 — Scale the model</div><h3>Second-property ready</h3><p>Standardise the playbook — PMS, staffing SOPs, marketing — so it can be cloned to a second dorm.</p></div>
+        </div>
+      </div>
     </div>
+    <p class="note">Targets are directional, built on the FY25-26 actuals and current 69% occupancy run-rate.</p>
   </div>
-  <div style="font-size:14px;color:var(--mute);margin-top:14px;">Projection is illustrative — final target to be aligned with Sancube.</div>
-  <div class="foot">IN &amp; OUT DORM · FY 2025-26 Review</div><div class="pg">19</div>
-</div></div></section>
+</section>
 
-<!-- 20 THANK YOU -->
-<section data-background-color="#0E1B2A"><div class="slide dark"><div class="leftbar"></div><div class="pad">
-  <div style="color:var(--amber);font-weight:800;letter-spacing:.12em;font-size:17px;margin-top:30px;">THANK YOU</div>
-  <h1 style="font-size:52px;font-weight:800;color:#fff;margin-top:18px;line-height:1.1;">A strong year. An even stronger<br><span style="color:var(--amber);">year ahead — together.</span></h1>
-  <div class="uline" style="width:160px;margin-top:26px;"></div>
-  <div style="font-size:20px;color:#C2CDD8;margin-top:24px;">₹28.53 L delivered to Sancube &nbsp;·&nbsp; ₹67.78 L total income &nbsp;·&nbsp; 12/12 profitable months</div>
-  <div style="position:absolute;left:64px;bottom:64px;">
-    <div style="font-size:22px;font-weight:800;color:#fff;">Shubham Panchal</div>
-    <div style="font-size:16px;color:var(--mute);margin-top:4px;">Operator — In &amp; Out Dorm &nbsp;·&nbsp; inoutdorm.com</div>
-  </div>
-</div></div></section>
+<footer>
+  <span class="pill">In &amp; Out Dormitory · Ahmedabad</span>
+  <p style="margin-top:16px">Operations review prepared for <b>Sancube</b> · FY 2025-26<br>Operated &amp; managed by <b>Shubham Panchal</b> · inoutdorm.com</p>
+  <p style="margin-top:10px;font-size:12px;color:#5d7186">Live figures sourced from the In &amp; Out management system, 10 Jun 2026.</p>
+</footer>
 
-</div></div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
 <script>
-  Reveal.initialize({width:1280,height:720,margin:0,controls:true,progress:true,hash:true,
-    transition:'slide',center:false,slideNumber:false});
+// ---- Monthly income bar chart ----
+(function(){
+  const months=["Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar"];
+  const income=[551970,529764,403458,555350,588808,681827,542039,628640,683037,506265,579365,527948];
+  const svg=document.getElementById('incomeChart');
+  const W=560,H=280,pad={l:40,r:14,t:24,b:34};
+  const max=700000, plotH=H-pad.t-pad.b, plotW=W-pad.l-pad.r;
+  const gap=plotW/months.length, bw=gap*0.62;
+  const mx=Math.max.apply(null,income);
+  let s='';
+  [0,175000,350000,525000,700000].forEach(function(v){
+    const y=pad.t+plotH-(v/max)*plotH;
+    s+='<line x1="'+pad.l+'" y1="'+y+'" x2="'+(W-pad.r)+'" y2="'+y+'" stroke="rgba(255,255,255,.07)" stroke-width="1"/>';
+    s+='<text x="'+(pad.l-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="10" fill="#6b8298">'+(v/100000)+'L</text>';
+  });
+  income.forEach(function(v,i){
+    const h=(v/max)*plotH, x=pad.l+gap*i+(gap-bw)/2, y=pad.t+plotH-h;
+    const peak=v===mx;
+    s+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+h+'" rx="4" fill="'+(peak?'#1FB6A6':'#F2A93B')+'"/>';
+    s+='<text x="'+(x+bw/2)+'" y="'+(H-pad.b+16)+'" text-anchor="middle" font-size="10" fill="#8ea3b8">'+months[i]+'</text>';
+    if(peak) s+='<text x="'+(x+bw/2)+'" y="'+(y-7)+'" text-anchor="middle" font-size="11" font-weight="800" fill="#1FB6A6">₹6.83L</text>';
+  });
+  svg.innerHTML=s;
+})();
+
+// ---- Donut split ----
+(function(){
+  const svg=document.getElementById('splitChart');
+  const cx=140,cy=140,r=92,sw=40;
+  const total=2853190+1055289;
+  const segs=[{v:2853190,c:'#4a6f9c'},{v:1055289,c:'#F2A93B'}];
+  let a=-Math.PI/2,s='';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="'+sw+'"/>';
+  segs.forEach(function(seg){
+    const frac=seg.v/total, a2=a+frac*2*Math.PI;
+    const x1=cx+r*Math.cos(a),y1=cy+r*Math.sin(a),x2=cx+r*Math.cos(a2),y2=cy+r*Math.sin(a2);
+    const large=frac>0.5?1:0;
+    s+='<path d="M'+x1+' '+y1+' A'+r+' '+r+' 0 '+large+' 1 '+x2+' '+y2+'" fill="none" stroke="'+seg.c+'" stroke-width="'+sw+'"/>';
+    a=a2;
+  });
+  s+='<text x="'+cx+'" y="'+(cy-4)+'" text-anchor="middle" font-size="25" font-weight="850" fill="#fff">₹39.08L</text>';
+  s+='<text x="'+cx+'" y="'+(cy+17)+'" text-anchor="middle" font-size="12" fill="#8ea3b8">Net Revenue</text>';
+  svg.innerHTML=s;
+})();
+
+// ---- Target chart ----
+(function(){
+  const svg=document.getElementById('targetChart');
+  const base=210, max=100;
+  const h1=(67.78/max)*170,h2=(88/max)*170;
+  let s='';
+  s+='<line x1="40" y1="'+base+'" x2="430" y2="'+base+'" stroke="rgba(255,255,255,.1)" stroke-width="2"/>';
+  s+='<rect x="95" y="'+(base-h1)+'" width="100" height="'+h1+'" rx="6" fill="#1FB6A6"/>';
+  s+='<text x="145" y="'+(base-h1-10)+'" text-anchor="middle" font-size="17" font-weight="850" fill="#1FB6A6">₹67.78L</text>';
+  s+='<text x="145" y="'+(base+22)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#8ea3b8">FY25-26</text>';
+  s+='<rect x="265" y="'+(base-h2)+'" width="100" height="'+h2+'" rx="6" fill="#F2A93B"/>';
+  s+='<text x="315" y="'+(base-h2-10)+'" text-anchor="middle" font-size="17" font-weight="850" fill="#F2A93B">₹88L</text>';
+  s+='<text x="315" y="'+(base+22)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#8ea3b8">FY26-27</text>';
+  svg.innerHTML=s;
+})();
 </script>
 </body>
 </html>
